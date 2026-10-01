@@ -44,11 +44,13 @@ No frameworks, libraries, or build tools required.
 ├── sitemap.xml         # Sitemap for SEO
 ├── README.md           # This file
 └── assets/
-    ├── logo.png            # Developer account logo (Kirtania)
-    ├── banner.png          # Developer account banner
-    ├── pito-notes-logo.png # Pito Notes app icon
-    ├── logo.svg            # SVG logo fallback
-    └── favicon.svg         # Favicon
+    ├── logo.png             # Developer account logo (Kirtania)
+    ├── banner.png           # Developer account banner
+    ├── trade-test-logo.jpg  # Trade Test - Pro Paper Trading logo
+    ├── crypto-test-logo.png # Crypto Test - Pro Paper Trading logo
+    ├── pito-notes-logo.png  # Pito Notes app icon
+    ├── logo.svg             # SVG logo fallback
+    └── favicon.svg          # Favicon
 ```
 
 ---

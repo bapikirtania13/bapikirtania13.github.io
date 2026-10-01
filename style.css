@@ -312,9 +312,25 @@ ul { list-style: none; }
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
-  margin-bottom: 12px;
 }
 [data-theme="dark"] .app-badge { background: #14532D; color: #4ADE80; }
+.app-category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
 .app-info p {
   color: var(--color-text-secondary);
   margin-bottom: 20px;
