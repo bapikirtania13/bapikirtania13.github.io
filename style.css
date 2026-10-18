@@ -57,7 +57,7 @@
   --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ---------- Dark Theme (Default) ---------- */
+/* ---------- Dark Theme ---------- */
 [data-theme="dark"] {
   --color-primary: #6366f1;
   --color-primary-hover: #818cf8;

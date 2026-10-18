@@ -1,7 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | Kirtania</title>
   <meta name="description" content="Privacy Policy for mobile applications developed by Kirtania, including PDF Sign Verify, Trade Test, Crypto Test, and Pito Notes." />
@@ -48,7 +60,7 @@
         </nav>
 
         <div class="header-actions">
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">☀️</button>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
           <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
             <span>Google Play</span>

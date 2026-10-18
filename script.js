@@ -61,21 +61,21 @@
     }
   }
 
-  // Detect saved preference or default to dark mode for rich aesthetics
+  // Detect saved preference or default to light mode
   let savedTheme = null;
   try {
     savedTheme = localStorage.getItem('theme');
   } catch (e) {}
 
   if (!savedTheme) {
-    // Default to dark mode for maximum modern visual appeal, or respect system
-    savedTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    // Default open in light mode
+    savedTheme = 'light';
   }
   applyTheme(savedTheme);
 
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
       applyTheme(current === 'dark' ? 'light' : 'dark');
     });
   }
