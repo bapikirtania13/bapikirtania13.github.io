@@ -80,14 +80,19 @@
     });
   }
 
-  /* ---------- Header Scroll Progress Animation ---------- */
+  /* ---------- Header Horizontal Scroll Progress Bar (0% - 100%) ---------- */
   if (scrollProgressBar) {
-    window.addEventListener('scroll', function () {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      scrollProgressBar.style.width = scrollPercent + '%';
-    }, { passive: true });
+    function updateScrollProgress() {
+      const winScroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const clamped = Math.min(100, Math.max(0, scrolled));
+      scrollProgressBar.style.width = clamped + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    window.addEventListener('resize', updateScrollProgress, { passive: true });
+    updateScrollProgress();
   }
 
   /* ---------- App Category Filtering ---------- */
