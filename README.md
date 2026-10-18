@@ -17,8 +17,8 @@ Official website of **Kirtania**, an independent Android application developer.
 3. **Crypto Test - Pro Paper Trading**
    - **Google Play:** [Crypto Test - Pro Paper Trading](https://play.google.com/store/apps/details?id=com.cryptotest.app)
    - Real-time cryptocurrency paper trading simulator.
-4. **Pito Notes**
-   - **Google Play Developer:** [Kirtania Console](https://play.google.com/store/apps/dev?id=7172278988293432799)
+4. **Pito Notes – Smart Notes & AI**
+   - **Google Play:** [Pito Notes – Smart Notes & AI](https://play.google.com/store/apps/details?id=com.nexanotes.nexa_notes)
    - Simple, lightweight, distraction-free note-taking application.
 
 ---
