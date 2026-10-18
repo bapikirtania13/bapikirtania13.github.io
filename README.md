@@ -1,19 +1,25 @@
-# Kirtania — Developer Website
+# Kirtania — Developer Website & Portfolio
 
-Official website of **Kirtania**, an independent Android app developer.
+Official website of **Kirtania**, an independent Android application developer.
 
-🔗 **Live Site:** [https://kirtania.github.io/](https://kirtania.github.io/)
+🔗 **Live Site:** [https://bapikirtania13.github.io/](https://bapikirtania13.github.io/)
 
 ---
 
-## About
+## Published Applications
 
-This is a static website built with HTML5, CSS3, and Vanilla JavaScript. It serves as the official developer website for the Kirtania Google Play developer account and is designed to:
-
-- Represent the developer identity on the web
-- Help verify the Google Play developer account
-- Provide privacy policy and terms for published apps
-- Showcase Android applications
+1. **PDF Sign Verify - Green Tick**
+   - **Google Play:** [PDF Sign Verify - Green Tick](https://play.google.com/store/apps/details?id=com.pdfsignverify.pdf_sign_verify)
+   - Real cryptographic verification of CMS/PKCS#7 signatures, X.509 certificate chains, and document integrity in PDFs (e-Aadhaar, PAN cards, invoices, contracts) completely offline.
+2. **Trade Test - Pro Paper Trading**
+   - **Google Play:** [Trade Test - Pro Paper Trading](https://play.google.com/store/apps/details?id=com.tradetest.trade_test)
+   - Stock market paper trading and strategy testing simulator.
+3. **Crypto Test - Pro Paper Trading**
+   - **Google Play:** [Crypto Test - Pro Paper Trading](https://play.google.com/store/apps/details?id=com.cryptotest.app)
+   - Real-time cryptocurrency paper trading simulator.
+4. **Pito Notes**
+   - **Google Play Developer:** [Kirtania Console](https://play.google.com/store/apps/dev?id=7172278988293432799)
+   - Simple, lightweight, distraction-free note-taking application.
 
 ---
 
@@ -21,12 +27,12 @@ This is a static website built with HTML5, CSS3, and Vanilla JavaScript. It serv
 
 | Technology | Purpose |
 |---|---|
-| HTML5 | Structure and content |
-| CSS3 | Styling and responsive design |
-| Vanilla JavaScript | Interactivity (theme toggle, mobile menu, scroll effects) |
-| Google Fonts (Inter) | Modern typography |
+| HTML5 | Semantic structure, SEO meta tags & JSON-LD schema |
+| Vanilla CSS3 | Modern glassmorphism, responsive grid, dark/light theme tokens |
+| Vanilla JavaScript | Category filtering, clipboard copy feedback, theme toggle, scroll observer |
+| Google Fonts | Outfit (headings) & Plus Jakarta Sans (body) |
 
-No frameworks, libraries, or build tools required.
+No heavy frameworks or external runtime dependencies required.
 
 ---
 
@@ -34,104 +40,22 @@ No frameworks, libraries, or build tools required.
 
 ```
 /
-├── index.html          # Main landing page
-├── privacy.html        # Privacy Policy
-├── terms.html          # Terms & Conditions
-├── 404.html            # Custom 404 error page
-├── style.css           # All styles
-├── script.js           # All JavaScript
-├── robots.txt          # Search engine directives
-├── sitemap.xml         # Sitemap for SEO
-├── README.md           # This file
+├── index.html                  # Main developer landing page & app showcase
+├── privacy.html                # Comprehensive Privacy Policy
+├── terms.html                  # Terms & Conditions
+├── 404.html                    # Custom 404 error page
+├── style.css                   # Modern CSS design system & responsive styles
+├── script.js                   # Interactive behaviors & theme manager
+├── robots.txt                  # Search engine directives
+├── sitemap.xml                 # Sitemap for SEO
+├── README.md                   # Project documentation
 └── assets/
-    ├── logo.png             # Developer account logo (Kirtania)
-    ├── banner.png           # Developer account banner
-    ├── trade-test-logo.jpg  # Trade Test - Pro Paper Trading logo
-    ├── crypto-test-logo.png # Crypto Test - Pro Paper Trading logo
-    ├── pito-notes-logo.png  # Pito Notes app icon
-    ├── logo.svg             # SVG logo fallback
-    └── favicon.svg          # Favicon
+    ├── logo.png                # Developer account logo (Kirtania)
+    ├── banner.png              # Developer account banner
+    ├── pdf-sign-verify-logo.png# PDF Sign Verify app icon
+    ├── trade-test-logo.jpg     # Trade Test logo
+    ├── crypto-test-logo.png    # Crypto Test logo
+    ├── pito-notes-logo.png     # Pito Notes app icon
+    ├── logo.svg                # SVG logo
+    └── favicon.svg             # Favicon
 ```
-
----
-
-## Deploy on GitHub Pages
-
-Follow these steps to deploy this website using GitHub Pages:
-
-### Step 1: Create a GitHub Repository
-
-1. Go to [github.com](https://github.com) and sign in.
-2. Click the **+** icon in the top-right and select **New repository**.
-3. Name the repository (e.g., `kirtania.github.io` for a user site, or any name for a project site).
-4. Set it to **Public**.
-5. Do **not** initialize with a README (we already have one).
-6. Click **Create repository**.
-
-### Step 2: Push the Code
-
-Open a terminal in the project folder and run:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: Kirtania developer website"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-git push -u origin main
-```
-
-Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual GitHub username and repository name.
-
-### Step 3: Enable GitHub Pages
-
-1. Go to your repository on GitHub.
-2. Click **Settings** → **Pages** (in the left sidebar).
-3. Under **Source**, select **Deploy from a branch**.
-4. Choose the **main** branch and **/ (root)** folder.
-5. Click **Save**.
-
-### Step 4: Access Your Site
-
-Your website will be live within a few minutes at:
-
-- **User site:** `https://YOUR_USERNAME.github.io/`
-- **Project site:** `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
-
-### Step 5: Update Canonical URLs (Important)
-
-After deploying, update the canonical URLs and Open Graph URLs in all HTML files to match your actual GitHub Pages URL:
-
-1. Open `index.html`, `privacy.html`, and `terms.html`.
-2. Find all instances of `https://kirtania.github.io/` and replace with your actual site URL.
-3. Update `sitemap.xml` and `robots.txt` with the correct base URL.
-4. Commit and push the changes.
-
----
-
-## Features
-
-- ✅ Responsive mobile-first design
-- ✅ Dark / Light mode with localStorage persistence
-- ✅ Smooth scroll navigation
-- ✅ Back-to-top button
-- ✅ SEO optimized (meta tags, Open Graph, Twitter Cards, JSON-LD, sitemap)
-- ✅ Accessibility-friendly (semantic HTML, ARIA labels, keyboard navigation)
-- ✅ Google Play Console compatible privacy policy
-- ✅ Professional terms and conditions
-- ✅ Custom 404 page
-- ✅ No external dependencies or build steps
-- ✅ Lightweight and fast loading
-
----
-
-## License
-
-© 2026 Kirtania. All Rights Reserved.
-
----
-
-## Contact
-
-- **Email:** [business.kirtania@gmail.com](mailto:business.kirtania@gmail.com)
-- **Google Play:** [Developer Page](https://play.google.com/store/apps/dev?id=7172278988293432799)
