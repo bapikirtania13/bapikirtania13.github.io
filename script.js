@@ -15,6 +15,7 @@
   const appCards = document.querySelectorAll('.app-card');
   const copyButtons = document.querySelectorAll('.copy-btn');
   const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+  const scrollProgressBar = document.getElementById('header-scroll-progress');
 
   /* ---------- Current Year ---------- */
   if (yearSpan) {
@@ -77,6 +78,16 @@
       const current = document.documentElement.getAttribute('data-theme') || 'dark';
       applyTheme(current === 'dark' ? 'light' : 'dark');
     });
+  }
+
+  /* ---------- Header Scroll Progress Animation ---------- */
+  if (scrollProgressBar) {
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgressBar.style.width = scrollPercent + '%';
+    }, { passive: true });
   }
 
   /* ---------- App Category Filtering ---------- */
@@ -170,7 +181,7 @@
     });
 
     window.addEventListener('scroll', function () {
-      const scrollPos = window.scrollY + 120;
+      const scrollPos = window.scrollY + 130;
       let currentSection = null;
 
       for (let i = 0; i < sections.length; i++) {

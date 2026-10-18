@@ -51,7 +51,9 @@
   --radius-full: 9999px;
   
   --max-width: 1180px;
-  --header-height: 74px;
+  --header-nav-height: 72px;
+  --header-ticker-height: 36px;
+  --header-height: 108px;
   --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-base: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
@@ -335,8 +337,7 @@ ul {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: var(--header-height);
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--color-border);
@@ -344,15 +345,15 @@ ul {
 }
 
 [data-theme="dark"] .header {
-  background: rgba(9, 13, 22, 0.82);
+  background: rgba(9, 13, 22, 0.88);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.header .container {
+.header-nav-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: var(--header-nav-height);
 }
 
 .logo {
@@ -467,9 +468,98 @@ ul {
   transition: all 0.3s ease;
 }
 
+/* ---------- Header Horizontal Scroll Progress & Animation Ticker ---------- */
+.header-scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), #06b6d4, #10b981);
+  box-shadow: 0 0 10px var(--color-primary-glow);
+  z-index: 1002;
+  transition: width 0.08s linear;
+}
+
+.header-ticker {
+  background: rgba(99, 102, 241, 0.05);
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+  height: var(--header-ticker-height);
+  display: flex;
+  align-items: center;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 3%, black 97%, transparent 100%);
+}
+
+[data-theme="dark"] .header-ticker {
+  background: rgba(15, 23, 42, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ticker-content {
+  display: flex;
+  width: max-content;
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  white-space: nowrap;
+  animation: ticker-slide 32s linear infinite;
+  will-change: transform;
+}
+
+.header-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.ticker-item strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.ticker-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.ticker-sep {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  font-size: 0.85rem;
+}
+
+@keyframes ticker-slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 /* ---------- Hero Section ---------- */
 .hero {
-  padding: 100px 0 80px;
+  padding: 80px 0 70px;
   text-align: center;
   position: relative;
 }
@@ -645,7 +735,7 @@ ul {
   gap: 28px;
 }
 
-/* Modern App Card */
+/* All App Cards have UNIFORM same-type styling */
 .app-card {
   background: var(--color-card-bg);
   border: 1px solid var(--color-card-border);
@@ -678,22 +768,6 @@ ul {
 
 .app-card:hover::before {
   opacity: 1;
-}
-
-/* Featured / Flagship App Card */
-.app-card-featured {
-  border: 1.5px solid rgba(16, 185, 129, 0.4);
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, var(--color-card-bg) 60%);
-  box-shadow: var(--shadow-md), 0 0 30px var(--color-accent-emerald-glow);
-}
-
-.app-card-featured::before {
-  background: var(--color-accent-emerald);
-  opacity: 1;
-}
-
-.app-card-featured:hover {
-  box-shadow: var(--shadow-lg), 0 0 45px var(--color-accent-emerald-glow);
 }
 
 .app-card-inner {
@@ -767,17 +841,6 @@ ul {
   background: rgba(16, 185, 129, 0.2);
   color: #4ade80;
   border: 1px solid rgba(74, 222, 128, 0.3);
-}
-
-.tag-badge-featured {
-  background: #fef3c7;
-  color: #b45309;
-}
-
-[data-theme="dark"] .tag-badge-featured {
-  background: rgba(245, 158, 11, 0.2);
-  color: #fcd34d;
-  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .tag-badge-category {
@@ -1315,7 +1378,7 @@ ul {
   
   .nav {
     position: fixed;
-    top: var(--header-height);
+    top: var(--header-nav-height);
     left: 0;
     right: 0;
     background: var(--color-surface-solid);
@@ -1348,7 +1411,7 @@ ul {
   }
   
   .hero {
-    padding: 70px 0 60px;
+    padding: 60px 0 50px;
   }
   
   .hero h1 {

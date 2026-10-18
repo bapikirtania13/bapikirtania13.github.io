@@ -29,32 +29,67 @@
 
   <!-- ============ Header ============ -->
   <header class="header" role="banner">
+    <!-- Horizontal Scroll Reading Progress Bar -->
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+
     <div class="container">
-      <a href="index.html" class="logo" aria-label="Kirtania Home">
-        <div class="logo-icon-wrapper">
-          <img src="assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
-        </div>
-        <span>Kirtania<span class="dot">.</span></span>
-      </a>
-
-      <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#apps">Apps</a>
-        <a href="index.html#about">About</a>
-        <a href="privacy.html" class="active">Privacy Policy</a>
-        <a href="terms.html">Terms</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">☀️</button>
-        <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
-          <span>Google Play</span>
+      <div class="header-nav-row">
+        <a href="index.html" class="logo" aria-label="Kirtania Home">
+          <div class="logo-icon-wrapper">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
         </a>
-        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps">Apps</a>
+          <a href="index.html#about">About</a>
+          <a href="privacy.html" class="active">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">☀️</button>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Horizontal Scrolling Animation Ticker -->
+    <div class="header-ticker" role="region" aria-label="Latest Highlights">
+      <div class="ticker-content">
+        <div class="ticker-track">
+          <div class="ticker-item"><span class="ticker-badge">🛡️ APP</span> <strong>PDF Sign Verify:</strong> Real Cryptographic PDF Digital Signature Verification (PKCS#7 &amp; X.509)</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">📈 APP</span> <strong>Trade Test:</strong> Real-Time Stock Market Paper Trading Simulator</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">🪙 APP</span> <strong>Crypto Test:</strong> Pro Virtual Cryptocurrency Trading Sandbox</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">📝 APP</span> <strong>Pito Notes:</strong> Distraction-Free Lightweight Note Taking</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">🔒 PRIVACY</span> 100% On-Device Processing &amp; Zero Cloud Document Uploads</div>
+          <span class="ticker-sep">•</span>
+
+          <!-- Duplicated for seamless loop -->
+          <div class="ticker-item"><span class="ticker-badge">🛡️ APP</span> <strong>PDF Sign Verify:</strong> Real Cryptographic PDF Digital Signature Verification (PKCS#7 &amp; X.509)</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">📈 APP</span> <strong>Trade Test:</strong> Real-Time Stock Market Paper Trading Simulator</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">🪙 APP</span> <strong>Crypto Test:</strong> Pro Virtual Cryptocurrency Trading Sandbox</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">📝 APP</span> <strong>Pito Notes:</strong> Distraction-Free Lightweight Note Taking</div>
+          <span class="ticker-sep">•</span>
+          <div class="ticker-item"><span class="ticker-badge">🔒 PRIVACY</span> 100% On-Device Processing &amp; Zero Cloud Document Uploads</div>
+          <span class="ticker-sep">•</span>
+        </div>
       </div>
     </div>
   </header>
