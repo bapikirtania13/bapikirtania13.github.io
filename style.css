@@ -1240,6 +1240,468 @@ ul {
   margin-bottom: 8px;
 }
 
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs a {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumbs .separator {
+  opacity: 0.45;
+  user-select: none;
+}
+
+.breadcrumbs .current {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ---------- App Detail Hero & Layout ---------- */
+.app-detail-page {
+  padding: 40px 0 80px;
+}
+
+.app-detail-hero {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(20px);
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-detail-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--color-primary-glow) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.app-detail-header {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.app-detail-icon-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.app-detail-icon {
+  width: 124px;
+  height: 124px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+  border: 3px solid var(--color-surface);
+  background: var(--color-surface);
+}
+
+.app-detail-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-detail-meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.app-detail-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.app-detail-tagline {
+  color: var(--color-text-secondary);
+  font-size: 1.12rem;
+  margin-bottom: 22px;
+  line-height: 1.55;
+  max-width: 820px;
+}
+
+.app-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.quick-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.quick-stat-value {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: 3px;
+}
+
+.app-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* ---------- App Content Section Cards ---------- */
+.app-content-section {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  padding: 38px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(20px);
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.app-content-section h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-content-section .section-lead {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ---------- How to Use Steps Timeline ---------- */
+.steps-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.step-item {
+  display: flex;
+  gap: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  transition: all var(--transition-base);
+}
+
+.step-item:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-badge {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4338ca 100%);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px var(--color-primary-glow);
+}
+
+[data-theme="dark"] .step-badge {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+.step-body {
+  flex: 1;
+}
+
+.step-body h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.step-body p {
+  color: var(--color-text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.step-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* ---------- Feature Grid ---------- */
+.app-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.app-feature-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all var(--transition-base);
+}
+
+.app-feature-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.app-feature-card .f-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.app-feature-card h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.app-feature-card p {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* ---------- Technical Specs Table ---------- */
+.spec-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.spec-table td {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+}
+
+.spec-table td.spec-title {
+  font-weight: 600;
+  color: var(--color-text);
+  width: 32%;
+  background: var(--color-bg-alt);
+  white-space: nowrap;
+}
+
+.spec-table td.spec-desc {
+  color: var(--color-text-secondary);
+}
+
+/* ---------- FAQ Cards ---------- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  transition: border-color var(--transition-fast);
+}
+
+.faq-box:hover {
+  border-color: var(--color-border-hover);
+}
+
+.faq-box h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-box p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ---------- Callout Boxes ---------- */
+.callout {
+  display: flex;
+  gap: 16px;
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  margin: 24px 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.callout-shield {
+  border-left: 4px solid var(--color-accent-emerald);
+}
+
+.callout-info {
+  border-left: 4px solid var(--color-primary);
+}
+
+.callout-warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.callout-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.callout-text h4 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.callout-text p {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ---------- Related Apps Navigation Row ---------- */
+.related-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.related-app-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.related-app-item:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.related-app-item img {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.related-app-item .rel-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.related-app-item .rel-title {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.related-app-item .rel-cat {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
 /* ---------- 404 Page ---------- */
 .page-404 {
   min-height: calc(100vh - var(--header-height));
@@ -1355,6 +1817,49 @@ ul {
   .legal-card {
     padding: 28px 20px;
   }
+
+  .app-detail-hero {
+    padding: 28px 20px;
+  }
+
+  .app-detail-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .app-detail-icon {
+    width: 96px;
+    height: 96px;
+  }
+
+  .app-detail-meta-badges {
+    justify-content: center;
+  }
+
+  .app-detail-title {
+    font-size: 1.85rem;
+  }
+
+  .app-detail-actions {
+    justify-content: center;
+  }
+
+  .app-content-section {
+    padding: 28px 20px;
+  }
+
+  .step-item {
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px 18px;
+  }
+
+  .spec-table td.spec-title {
+    width: 42%;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1373,5 +1878,15 @@ ul {
   }
   .app-card {
     padding: 22px 18px;
+  }
+  .app-detail-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .app-detail-actions .btn {
+    width: 100%;
+  }
+  .app-quick-stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

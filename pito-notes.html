@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>Pito Notes – Smart Notes &amp; AI | Minimalist Private Android Note App</title>
+  <meta name="description" content="Capture ideas effortlessly with Pito Notes for Android. A fast, distraction-free note-taking utility with rich formatting, checklists, smart search, and private local storage." />
+  <meta name="keywords" content="Pito Notes, smart notes, Android note app, checklist app, private note taking, markdown notes, minimal note app, Kirtania" />
+  <link rel="canonical" href="https://kirtania.github.io/pito-notes.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pito Notes – Smart Notes &amp; AI | How to Use &amp; Guide" />
+  <meta property="og:description" content="Capture thoughts and to-do lists instantly with Pito Notes on Android." />
+  <meta property="og:url" content="https://kirtania.github.io/pito-notes.html" />
+  <meta property="og:image" content="https://kirtania.github.io/assets/pito-notes-logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pito Notes – Smart Notes &amp; AI | Android App Guide" />
+  <meta name="twitter:description" content="Instant idea capture and smart note organization with complete local privacy." />
+  <meta name="twitter:image" content="https://kirtania.github.io/assets/pito-notes-logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data: SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pito Notes – Smart Notes & AI",
+    "operatingSystem": "Android",
+    "applicationCategory": "ProductivityApplication",
+    "url": "https://kirtania.github.io/pito-notes.html",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.nexanotes.nexa_notes",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://kirtania.github.io/"
+    },
+    "description": "Fast, distraction-free note-taking utility designed for instant idea capture, checklists, smart organization, and secure local device storage.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header / Navigation ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="index.html" class="logo" aria-label="Kirtania Homepage">
+          <div class="logo-icon-wrapper">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Primary navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps" class="active">Apps</a>
+          <a href="index.html#about">About</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/details?id=com.nexanotes.nexa_notes" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm" aria-label="Download Pito Notes on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="app-detail-page">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="index.html#apps">Apps</a>
+        <span class="separator">/</span>
+        <span class="current">Pito Notes</span>
+      </nav>
+
+      <!-- ============ App Detail Hero ============ -->
+      <section class="app-detail-hero fade-in">
+        <div class="app-detail-header">
+          <div class="app-detail-icon-wrap">
+            <img src="assets/pito-notes-logo.png" alt="Pito Notes App Icon" class="app-detail-icon" width="124" height="124" />
+          </div>
+
+          <div class="app-detail-header-info">
+            <div class="app-detail-meta-badges">
+              <span class="tag-badge tag-badge-green">✅ Google Play Live</span>
+              <span class="tag-badge tag-badge-category">📝 Smart Notes &amp; Productivity</span>
+              <span class="tag-badge tag-badge-category">🔒 100% Local Storage</span>
+            </div>
+
+            <h1 class="app-detail-title">Pito Notes – Smart Notes &amp; AI</h1>
+            <p class="app-detail-tagline">
+              A lightning-fast, distraction-free note-taking utility designed for immediate idea capture, structured checklists, color-coded categorization, and reliable local on-device storage. Built to keep your thoughts private and organized.
+            </p>
+
+            <div class="app-quick-stats">
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Category</span>
+                <span class="quick-stat-value">Productivity</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Storage</span>
+                <span class="quick-stat-value" style="color:var(--color-accent-emerald);">100% On-Device</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Compatibility</span>
+                <span class="quick-stat-value">Android 6.0+</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Price</span>
+                <span class="quick-stat-value">Free</span>
+              </div>
+            </div>
+
+            <div class="app-detail-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.nexanotes.nexa_notes" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+                <span>Download on Google Play</span>
+              </a>
+              <a href="#how-to-use" class="btn btn-outline">
+                <span>How to Use Guide</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Overview Section ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>💡</span> About Pito Notes</h2>
+        <p class="section-lead">
+          Great ideas strike unexpectedly. When inspiration hits, nobody wants to wait for a bloated app to sync with a remote server, display loading wheels, or demand an account login before letting you type a quick sentence.
+        </p>
+        <p>
+          <strong>Pito Notes – Smart Notes &amp; AI</strong> is engineered around a single philosophy: zero friction. The app launches instantly in under 100 milliseconds, presents an uncluttered writing canvas, and saves every keystroke safely to a high-speed local database on your Android device.
+        </p>
+
+        <div class="callout callout-shield">
+          <div class="callout-icon">🛡️</div>
+          <div class="callout-text">
+            <h4>Private by Default: Your Words Stay Yours</h4>
+            <p>
+              Your personal notes, journal entries, meeting agendas, and checklists are confidential. Pito Notes stores your content locally in your device's protected internal app storage. No remote servers ever read or profile your personal writings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Step-by-Step How-To-Use Guide ============ -->
+      <section class="app-content-section fade-in" id="how-to-use">
+        <h2><span>📖</span> How to Use Pito Notes (Step-by-Step)</h2>
+        <p class="section-lead">
+          Make the most of Pito Notes with these quick practical steps:
+        </p>
+
+        <div class="steps-timeline">
+          <!-- Step 1 -->
+          <article class="step-item">
+            <div class="step-badge">1</div>
+            <div class="step-body">
+              <h3>Instant Idea Capture</h3>
+              <p>
+                Tap the prominent <strong>"+"</strong> button at the bottom of the home screen to open a clean writing canvas immediately. Type a title and jot down your thoughts, code snippets, meeting minutes, or daily reminders without any delay.
+              </p>
+              <div class="step-tip">⚡ Fast launch: No splash delays or mandatory cloud synchronization.</div>
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step-item">
+            <div class="step-badge">2</div>
+            <div class="step-body">
+              <h3>Create Structured Checklists &amp; To-Do Lists</h3>
+              <p>
+                Switch to checklist mode with a single tap. Add action items for shopping, work tasks, or daily routines. Mark completed items with interactive checkmarks that strike through finished tasks cleanly.
+              </p>
+            </div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step-item">
+            <div class="step-badge">3</div>
+            <div class="step-body">
+              <h3>Organize with Color Tags &amp; Pin Favorites</h3>
+              <p>
+                Assign vibrant visual color accents or tags (such as <em>Work</em>, <em>Personal</em>, <em>Ideas</em>, <em>Finance</em>) to keep your workspace structured. Pin your most urgent notes to the top of your feed for instant visibility.
+              </p>
+              <div class="step-tip">📌 Pinned notes remain permanently at the top of your workspace.</div>
+            </div>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="step-item">
+            <div class="step-badge">4</div>
+            <div class="step-body">
+              <h3>Search Any Keyword in Real-Time</h3>
+              <p>
+                Use the top search bar to find notes instantly as you type. The search engine searches both titles and note bodies locally in milliseconds, making it effortless to retrieve notes written weeks or months ago.
+              </p>
+            </div>
+          </article>
+
+          <!-- Step 5 -->
+          <article class="step-item">
+            <div class="step-badge">5</div>
+            <div class="step-body">
+              <h3>Leverage Smart Note Assistance</h3>
+              <p>
+                Utilize integrated smart writing features to format, summarize long paragraphs, generate bullet summaries, and clean up messy drafts so you can communicate clearly.
+              </p>
+            </div>
+          </article>
+
+          <!-- Step 6 -->
+          <article class="step-item">
+            <div class="step-badge">6</div>
+            <div class="step-body">
+              <h3>Backup &amp; Export on Your Own Terms</h3>
+              <p>
+                Export your notes as clean text, markdown, or create an encrypted local backup file that you can save to Google Drive or an SD card whenever you choose.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Key Features Grid ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>⚡</span> Core Features &amp; Workflow Tools</h2>
+        <p class="section-lead">Carefully crafted for clarity, speed, and dependable everyday writing.</p>
+
+        <div class="app-features-grid">
+          <div class="app-feature-card">
+            <div class="f-icon">🚀</div>
+            <h3>Instant Cold Start</h3>
+            <p>Opens immediately so you never lose a fleeting thought while waiting for an app to boot up.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">☑️</div>
+            <h3>Interactive Checklists</h3>
+            <p>Seamlessly toggle between standard paragraphs and checklist tasks with completion counters.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🎨</div>
+            <h3>Color Coding &amp; Tags</h3>
+            <p>Categorize your thoughts with aesthetic color palettes and custom labels for instant visual grouping.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🔍</div>
+            <h3>Sub-Millisecond Search</h3>
+            <p>High-speed on-device indexed text search that finds exactly what you are looking for in real-time.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🔒</div>
+            <h3>Local SQLite Security</h3>
+            <p>Your notes are stored in a sandboxed local database with zero remote scanning or data harvesting.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🌙</div>
+            <h3>OLED Dark Mode</h3>
+            <p>True black aesthetic for OLED displays, reducing eye fatigue during late-night journaling sessions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Technical Specifications ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>⚙️</span> Technical Specifications</h2>
+        <p class="section-lead">Key application parameters for Pito Notes.</p>
+
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <td class="spec-title">Package Identifier</td>
+                <td class="spec-desc"><code>com.nexanotes.nexa_notes</code></td>
+              </tr>
+              <tr>
+                <td class="spec-title">Minimum Android Version</td>
+                <td class="spec-desc">Android 6.0 (Marshmallow, API 23) or higher</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Target Android Version</td>
+                <td class="spec-desc">Android 14 (API 34) &amp; Android 15 ready</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Storage Architecture</td>
+                <td class="spec-desc">Local On-Device SQLite / Room Database</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Export Options</td>
+                <td class="spec-desc">Plain Text (.txt), Markdown (.md), Local Backup</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Permissions Required</td>
+                <td class="spec-desc">Storage (optional, only when exporting backups)</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Account Requirement</td>
+                <td class="spec-desc">None — Ready to use immediately</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ Frequently Asked Questions ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>❓</span> Frequently Asked Questions (FAQ)</h2>
+        <p class="section-lead">Answers to common questions regarding Pito Notes.</p>
+
+        <div class="faq-list">
+          <div class="faq-box">
+            <h3><span>Q:</span> Are my notes uploaded to external servers?</h3>
+            <p>
+              <strong>No.</strong> Pito Notes stores all your notes locally on your device within the app's secure internal storage container. You maintain complete sovereignty over your writings.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> How do I transfer my notes to a new phone?</h3>
+            <p>
+              You can use the built-in <strong>Export / Backup</strong> function to save an archive of your notes to Google Drive, email, or an SD card, and then import it into Pito Notes on your new Android phone.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Does Pito Notes work without internet access?</h3>
+            <p>
+              Yes, 100%. Pito Notes does not require an active internet connection to create, edit, search, or view your notes.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Can I pin important notes?</h3>
+            <p>
+              Yes. Simply long-press or tap the pin icon on any note to keep it anchored at the very top of your workspace list.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Download CTA Banner ============ -->
+      <section class="app-content-section fade-in text-center" style="background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-alt) 100%);">
+        <h2 style="justify-content:center;">Experience Distraction-Free Note Taking</h2>
+        <p class="section-lead" style="max-width:600px; margin:0 auto 24px;">
+          Install Pito Notes – Smart Notes &amp; AI for free on Google Play and capture your best ideas in seconds.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.nexanotes.nexa_notes" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+          <span>Get it on Google Play</span>
+        </a>
+      </section>
+
+      <!-- ============ Explore Other Apps ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>📱</span> Explore Other Apps by Kirtania</h2>
+        <p class="section-lead">Discover more high-performance utilities and simulators crafted with care.</p>
+
+        <div class="related-apps-grid">
+          <a href="pdf-sign-verify.html" class="related-app-item">
+            <img src="assets/pdf-sign-verify-logo.png" alt="PDF Sign Verify Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">PDF Sign Verify</span>
+              <span class="rel-cat">🛡️ Cryptographic PDF Tool</span>
+            </div>
+          </a>
+
+          <a href="trade-test.html" class="related-app-item">
+            <img src="assets/trade-test-logo.jpg" alt="Trade Test Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Trade Test</span>
+              <span class="rel-cat">📈 Stock Paper Trading</span>
+            </div>
+          </a>
+
+          <a href="crypto-test.html" class="related-app-item">
+            <img src="assets/crypto-test-logo.png" alt="Crypto Test Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Crypto Test</span>
+              <span class="rel-cat">🪙 Crypto Paper Trading</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps">Apps</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer">Google Play Profile</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>Crypto Test - Pro Paper Trading | Cryptocurrency Market Simulator for Android</title>
+  <meta name="description" content="Trade Bitcoin, Ethereum, and 100+ cryptocurrencies risk-free with Crypto Test for Android. Real-time prices, interactive charting, and virtual portfolio management." />
+  <meta name="keywords" content="Crypto Test, crypto paper trading, cryptocurrency simulator, Bitcoin paper trading, Ethereum trading simulator, virtual crypto app, Android crypto practice, Kirtania" />
+  <link rel="canonical" href="https://kirtania.github.io/crypto-test.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Crypto Test - Pro Paper Trading | How to Use &amp; Guide" />
+  <meta property="og:description" content="Simulate real-time cryptocurrency trading risk-free on Android with Crypto Test." />
+  <meta property="og:url" content="https://kirtania.github.io/crypto-test.html" />
+  <meta property="og:image" content="https://kirtania.github.io/assets/crypto-test-logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Crypto Test - Pro Paper Trading | Android App Guide" />
+  <meta name="twitter:description" content="Master crypto trading strategies with authentic real-time paper trading." />
+  <meta name="twitter:image" content="https://kirtania.github.io/assets/crypto-test-logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data: SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Crypto Test - Pro Paper Trading",
+    "operatingSystem": "Android",
+    "applicationCategory": "FinanceApplication",
+    "url": "https://kirtania.github.io/crypto-test.html",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.cryptotest.app",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://kirtania.github.io/"
+    },
+    "description": "Real-time cryptocurrency paper trading simulator for Android. Practice trading Bitcoin, Ethereum, and major altcoins in an authentic risk-free virtual environment.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header / Navigation ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="index.html" class="logo" aria-label="Kirtania Homepage">
+          <div class="logo-icon-wrapper">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Primary navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps" class="active">Apps</a>
+          <a href="index.html#about">About</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/details?id=com.cryptotest.app" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm" aria-label="Download Crypto Test on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="app-detail-page">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="index.html#apps">Apps</a>
+        <span class="separator">/</span>
+        <span class="current">Crypto Test</span>
+      </nav>
+
+      <!-- ============ App Detail Hero ============ -->
+      <section class="app-detail-hero fade-in">
+        <div class="app-detail-header">
+          <div class="app-detail-icon-wrap">
+            <img src="assets/crypto-test-logo.png" alt="Crypto Test App Icon" class="app-detail-icon" width="124" height="124" />
+          </div>
+
+          <div class="app-detail-header-info">
+            <div class="app-detail-meta-badges">
+              <span class="tag-badge tag-badge-green">✅ Google Play Live</span>
+              <span class="tag-badge tag-badge-category">🪙 Crypto Paper Trading</span>
+              <span class="tag-badge tag-badge-category">🛡️ 100% Risk-Free Simulation</span>
+            </div>
+
+            <h1 class="app-detail-title">Crypto Test - Pro Paper Trading</h1>
+            <p class="app-detail-tagline">
+              Dive into the dynamic world of cryptocurrency markets without financial risk. Crypto Test lets you practice trading Bitcoin (BTC), Ethereum (ETH), Solana (SOL), and over 100 altcoins with live price feeds, candlestick charts, and instant simulated order execution.
+            </p>
+
+            <div class="app-quick-stats">
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Category</span>
+                <span class="quick-stat-value">Crypto Simulation</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Assets</span>
+                <span class="quick-stat-value">100+ Live Coins</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Financial Risk</span>
+                <span class="quick-stat-value" style="color:var(--color-accent-emerald);">0% (Virtual USDT)</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Price</span>
+                <span class="quick-stat-value">Free</span>
+              </div>
+            </div>
+
+            <div class="app-detail-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.cryptotest.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+                <span>Download on Google Play</span>
+              </a>
+              <a href="#how-to-use" class="btn btn-outline">
+                <span>How to Use Guide</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Overview Section ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>🪙</span> About Crypto Test</h2>
+        <p class="section-lead">
+          Cryptocurrency markets trade 24/7/365 with unprecedented volatility. For beginners and experienced traders alike, testing strategies directly on live exchanges with real money can lead to sudden, severe capital losses due to flash crashes, liquidation wicks, and emotional trading.
+        </p>
+        <p>
+          <strong>Crypto Test - Pro Paper Trading</strong> provides a completely secure sandbox. You trade against live market prices using virtual demo USDT. You never have to connect an exchange API key, risk private wallet keys, or complete KYC verification.
+        </p>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">⚠️</div>
+          <div class="callout-text">
+            <h4>Educational Simulator Notice</h4>
+            <p>
+              Crypto Test is an <strong>educational paper trading simulation</strong>. Virtual currencies (simulated USDT, BTC, ETH) inside this app have no real-world monetary value, cannot be redeemed for fiat or actual crypto, and cannot be withdrawn. This app does not provide financial or cryptocurrency investment advice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Step-by-Step How-To-Use Guide ============ -->
+      <section class="app-content-section fade-in" id="how-to-use">
+        <h2><span>📖</span> How to Use Crypto Test (Step-by-Step)</h2>
+        <p class="section-lead">
+          Follow these simple steps to start simulating crypto trades immediately:
+        </p>
+
+        <div class="steps-timeline">
+          <!-- Step 1 -->
+          <article class="step-item">
+            <div class="step-badge">1</div>
+            <div class="step-body">
+              <h3>Start with Your Virtual Sandbox Balance</h3>
+              <p>
+                Open Crypto Test to automatically receive an allocation of simulated virtual USDT. There is no signup wall, wallet setup, or credit card prompt. You can immediately begin exploring the crypto market interface.
+              </p>
+              <div class="step-tip">💡 Tip: Use your virtual balance to test realistic trade sizes like 2% or 5% per position.</div>
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step-item">
+            <div class="step-badge">2</div>
+            <div class="step-body">
+              <h3>Browse Market Trends &amp; Top Gainers</h3>
+              <p>
+                Explore the comprehensive crypto market board sorted by market capitalization, 24-hour top gainers, top losers, and highest trading volume. Filter across major pairs like BTC/USDT, ETH/USDT, SOL/USDT, and high-momentum altcoins.
+              </p>
+            </div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step-item">
+            <div class="step-badge">3</div>
+            <div class="step-body">
+              <h3>Inspect Dynamic Candlestick Charts</h3>
+              <p>
+                Select any trading pair to launch responsive candlestick charts. Switch between timeframes (1m, 5m, 15m, 1h, 4h, 1D), analyze support and resistance levels, and examine volume trends before entering a position.
+              </p>
+              <div class="step-tip">⚡ Real-time updates: Live ticking prices refreshed continuously.</div>
+            </div>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="step-item">
+            <div class="step-badge">4</div>
+            <div class="step-body">
+              <h3>Place Simulated Buy or Sell Orders</h3>
+              <p>
+                Tap <strong>Trade</strong> to execute a simulated order:
+              </p>
+              <ul style="list-style:disc; padding-left:22px; color:var(--color-text-secondary); margin:8px 0; font-size:0.95rem;">
+                <li><strong>Market Order:</strong> Fill instantly at the current best available simulated price.</li>
+                <li><strong>Limit Order:</strong> Set an exact entry price and wait for market price action to reach your trigger.</li>
+                <li><strong>Stop Orders:</strong> Protect your simulated capital by configuring automated stop-loss exits.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Step 5 -->
+          <article class="step-item">
+            <div class="step-badge">5</div>
+            <div class="step-body">
+              <h3>Track Your Virtual Portfolio Breakdown</h3>
+              <p>
+                View your asset allocation pie chart in the <strong>Portfolio</strong> tab. Track how much of your capital is in virtual USDT vs held in active crypto positions. Monitor unrealized profit/loss update with every market tick.
+              </p>
+            </div>
+          </article>
+
+          <!-- Step 6 -->
+          <article class="step-item">
+            <div class="step-badge">6</div>
+            <div class="step-body">
+              <h3>Analyze Historical Trades &amp; Refine Strategies</h3>
+              <p>
+                Review your completed trades history to see your winning percentage, average holding time, and profit factors. Test dollar-cost averaging (DCA), swing trading, or breakout trading strategies over time without risking a single dollar.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Key Features Grid ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>⚡</span> Core Features &amp; Simulator Tools</h2>
+        <p class="section-lead">Engineered to simulate real cryptocurrency market mechanics accurately.</p>
+
+        <div class="app-features-grid">
+          <div class="app-feature-card">
+            <div class="f-icon">🌐</div>
+            <h3>100+ Cryptocurrencies</h3>
+            <p>Trade simulated pairs including Bitcoin, Ethereum, Solana, Cardano, Ripple, Dogecoin, and emerging DeFi tokens.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">📊</div>
+            <h3>Interactive Candlesticks</h3>
+            <p>Fluid charting with multi-timeframe analysis, volume indicators, and clean price movement rendering.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🛡️</div>
+            <h3>Zero Wallet Risk</h3>
+            <p>No seed phrases, no private keys, and zero exchange hacking risks. All operations are safe virtual simulations.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">⚡</div>
+            <h3>Instant Order Matching</h3>
+            <p>Execute paper trades instantaneously with realistic simulated market depth and price updates.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🍰</div>
+            <h3>Portfolio Allocation Insights</h3>
+            <p>Clear graphical breakdown of your holdings, total equity, cash reserve, and 24h P&amp;L performance.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🌙</div>
+            <h3>Sleek Modern UI</h3>
+            <p>High-contrast dark and light themes crafted specifically for long trading sessions with zero eye strain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Technical Specifications ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>⚙️</span> Technical Specifications</h2>
+        <p class="section-lead">Key application parameters for Crypto Test.</p>
+
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <td class="spec-title">Package Identifier</td>
+                <td class="spec-desc"><code>com.cryptotest.app</code></td>
+              </tr>
+              <tr>
+                <td class="spec-title">Minimum Android Version</td>
+                <td class="spec-desc">Android 6.0 (Marshmallow, API 23) or higher</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Target Android Version</td>
+                <td class="spec-desc">Android 14 (API 34) &amp; Android 15 ready</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Supported Trading Pairs</td>
+                <td class="spec-desc">BTC/USDT, ETH/USDT, SOL/USDT, BNB/USDT, and 100+ altcoin pairs</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Order Modes</td>
+                <td class="spec-desc">Market Orders, Limit Orders, Stop Orders</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Permissions Required</td>
+                <td class="spec-desc">Internet Access (to stream real-time crypto price feeds)</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Blockchain Connectivity</td>
+                <td class="spec-desc">None — 100% Virtual Simulator Sandbox</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ Frequently Asked Questions ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>❓</span> Frequently Asked Questions (FAQ)</h2>
+        <p class="section-lead">Common questions answered regarding crypto paper trading.</p>
+
+        <div class="faq-list">
+          <div class="faq-box">
+            <h3><span>Q:</span> Do I need a crypto exchange account or wallet to use Crypto Test?</h3>
+            <p>
+              <strong>No.</strong> Crypto Test is a standalone simulator. You do not need accounts on Binance, Coinbase, or any exchange, nor do you need MetaMask or hardware wallets. You get virtual USDT immediately upon installing.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Are the cryptocurrency prices real?</h3>
+            <p>
+              Yes. The app feeds live market pricing data from leading global cryptocurrency price indexes so that your paper trading reflects authentic market conditions and price action.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Can I withdraw my virtual cryptocurrency profits?</h3>
+            <p>
+              No. All balances, coins, and profits within Crypto Test are strictly virtual and educational. They have zero cash value and cannot be transferred outside the simulation environment.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Is Crypto Test suitable for testing bot and DCA strategies?</h3>
+            <p>
+              Yes. Many users practice recurring dollar-cost averaging (DCA), support/resistance breakouts, and swing-trading strategies to measure profitability before risking capital in real markets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Download CTA Banner ============ -->
+      <section class="app-content-section fade-in text-center" style="background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-alt) 100%);">
+        <h2 style="justify-content:center;">Ready to Master Crypto Trading Risk-Free?</h2>
+        <p class="section-lead" style="max-width:600px; margin:0 auto 24px;">
+          Install Crypto Test - Pro Paper Trading for free on Google Play and start practicing in an authentic virtual market environment today.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.cryptotest.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+          <span>Get it on Google Play</span>
+        </a>
+      </section>
+
+      <!-- ============ Explore Other Apps ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>📱</span> Explore Other Apps by Kirtania</h2>
+        <p class="section-lead">Discover more high-performance utilities and simulators crafted with care.</p>
+
+        <div class="related-apps-grid">
+          <a href="pdf-sign-verify.html" class="related-app-item">
+            <img src="assets/pdf-sign-verify-logo.png" alt="PDF Sign Verify Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">PDF Sign Verify</span>
+              <span class="rel-cat">🛡️ Cryptographic PDF Tool</span>
+            </div>
+          </a>
+
+          <a href="trade-test.html" class="related-app-item">
+            <img src="assets/trade-test-logo.jpg" alt="Trade Test Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Trade Test</span>
+              <span class="rel-cat">📈 Stock Paper Trading</span>
+            </div>
+          </a>
+
+          <a href="pito-notes.html" class="related-app-item">
+            <img src="assets/pito-notes-logo.png" alt="Pito Notes Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Pito Notes</span>
+              <span class="rel-cat">📝 Productivity &amp; Notes</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps">Apps</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer">Google Play Profile</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

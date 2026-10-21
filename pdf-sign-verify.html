@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>PDF Sign Verify - Green Tick | Cryptographic Android Digital Signature Validator</title>
+  <meta name="description" content="Discover PDF Sign Verify - Green Tick for Android. Learn how to authenticate digital signatures on e-Aadhaar, PAN cards, invoices, and certificates with 100% on-device cryptographic verification." />
+  <meta name="keywords" content="PDF Sign Verify, Green Tick, e-Aadhaar signature verification, digital signature validator, PKCS7, CMS, X.509 certificate, Android PDF signature verify, Kirtania" />
+  <link rel="canonical" href="https://kirtania.github.io/pdf-sign-verify.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PDF Sign Verify - Green Tick | How to Use &amp; Features" />
+  <meta property="og:description" content="Validate digital signatures on official PDFs locally on your Android phone with zero cloud uploads." />
+  <meta property="og:url" content="https://kirtania.github.io/pdf-sign-verify.html" />
+  <meta property="og:image" content="https://kirtania.github.io/assets/pdf-sign-verify-logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="PDF Sign Verify - Green Tick | Android App Guide" />
+  <meta name="twitter:description" content="Authenticate PDF digital signatures instantly and privately on Android." />
+  <meta name="twitter:image" content="https://kirtania.github.io/assets/pdf-sign-verify-logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data: SoftwareApplication Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PDF Sign Verify - Green Tick",
+    "operatingSystem": "Android",
+    "applicationCategory": "UtilitiesApplication",
+    "url": "https://kirtania.github.io/pdf-sign-verify.html",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.pdfsignverify.pdf_sign_verify",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://kirtania.github.io/"
+    },
+    "description": "Cryptographic digital signature validation utility for Android that verifies signatures on e-Aadhaar, PAN cards, invoices, and certificates locally on device.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header / Navigation ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="index.html" class="logo" aria-label="Kirtania Homepage">
+          <div class="logo-icon-wrapper">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Primary navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps" class="active">Apps</a>
+          <a href="index.html#about">About</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/details?id=com.pdfsignverify.pdf_sign_verify" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm" aria-label="Download on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reading Progress Bar -->
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="app-detail-page">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="index.html#apps">Apps</a>
+        <span class="separator">/</span>
+        <span class="current">PDF Sign Verify</span>
+      </nav>
+
+      <!-- ============ App Detail Hero ============ -->
+      <section class="app-detail-hero fade-in">
+        <div class="app-detail-header">
+          <div class="app-detail-icon-wrap">
+            <img src="assets/pdf-sign-verify-logo.png" alt="PDF Sign Verify App Icon" class="app-detail-icon" width="124" height="124" />
+          </div>
+
+          <div class="app-detail-header-info">
+            <div class="app-detail-meta-badges">
+              <span class="tag-badge tag-badge-green">✅ Google Play Live</span>
+              <span class="tag-badge tag-badge-category">🛡️ Cryptography &amp; Security</span>
+              <span class="tag-badge tag-badge-category">🔒 100% On-Device</span>
+            </div>
+
+            <h1 class="app-detail-title">PDF Sign Verify - Green Tick</h1>
+            <p class="app-detail-tagline">
+              The premier Android digital signature validation engine. Inspect X.509 certificate chains, authenticate PKCS#7 signatures, and verify document integrity on e-Aadhaar, PAN cards, invoices, and certificates locally without uploading files to any external server.
+            </p>
+
+            <div class="app-quick-stats">
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Category</span>
+                <span class="quick-stat-value">Tools &amp; Security</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Compatibility</span>
+                <span class="quick-stat-value">Android 6.0+</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Cloud Uploads</span>
+                <span class="quick-stat-value" style="color:var(--color-accent-emerald);">0% (100% Offline)</span>
+              </div>
+              <div class="quick-stat-item">
+                <span class="quick-stat-label">Price</span>
+                <span class="quick-stat-value">Free</span>
+              </div>
+            </div>
+
+            <div class="app-detail-actions">
+              <a href="https://play.google.com/store/apps/details?id=com.pdfsignverify.pdf_sign_verify" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+                <span>Download on Google Play</span>
+              </a>
+              <a href="#how-to-use" class="btn btn-outline">
+                <span>How to Use Guide</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Overview Section ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>🔍</span> About PDF Sign Verify</h2>
+        <p class="section-lead">
+          In today's digital era, official documents such as e-Aadhaar, income tax filings, utility bills, educational certificates, and employment contracts are digitally signed rather than handwritten. When viewed on standard mobile PDF viewers, these documents often display a confusing yellow question mark <strong>(?)</strong> or state "Signature Not Verified."
+        </p>
+        <p>
+          <strong>PDF Sign Verify - Green Tick</strong> bridges this crucial gap on mobile devices. It provides an enterprise-grade cryptographic validation engine that parses standard CMS (Cryptographic Message Syntax) and PKCS#7 digital signature containers embedded inside PDF documents according to the official ISO 32000 specification.
+        </p>
+        
+        <div class="callout callout-shield">
+          <div class="callout-icon">🛡️</div>
+          <div class="callout-text">
+            <h4>100% Privacy by Design: Zero Document Uploads</h4>
+            <p>
+              Unlike online web converters or cloud portals that require you to upload your sensitive identity documents to an unknown server, PDF Sign Verify executes all cryptographic hashing, certificate parsing, and signature verification <strong>strictly on your device's processor</strong>. Your documents never leave your storage.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Step-by-Step How-To-Use Guide ============ -->
+      <section class="app-content-section fade-in" id="how-to-use">
+        <h2><span>📖</span> How to Use PDF Sign Verify (Step-by-Step)</h2>
+        <p class="section-lead">
+          Follow these quick steps to verify any digitally signed PDF document in seconds:
+        </p>
+
+        <div class="steps-timeline">
+          <!-- Step 1 -->
+          <article class="step-item">
+            <div class="step-badge">1</div>
+            <div class="step-body">
+              <h3>Select &amp; Open Your PDF Document</h3>
+              <p>
+                Launch the application and tap <strong>"Select PDF"</strong>. You can choose any PDF stored in your internal storage, Downloads folder, SD card, or directly import a file from WhatsApp, Google Drive, Gmail, or your file manager using the system document picker.
+              </p>
+              <div class="step-tip">💡 Tip: Password-protected PDFs are supported; the app will prompt for the document password locally.</div>
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="step-item">
+            <div class="step-badge">2</div>
+            <div class="step-body">
+              <h3>Automatic Instant Cryptographic Analysis</h3>
+              <p>
+                Once selected, the built-in parser automatically locates the PDF's signature dictionaries, extracts the signed <code>ByteRange</code>, and recalculates the SHA-256 or SHA-1 cryptographic message digest to confirm that no alterations have occurred since the document was signed.
+              </p>
+              <div class="step-tip">⚡ Execution: Verification completes in under 500 milliseconds for standard documents.</div>
+            </div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="step-item">
+            <div class="step-badge">3</div>
+            <div class="step-body">
+              <h3>Inspect Signer &amp; Certificate Information</h3>
+              <p>
+                The app presents a comprehensive verification summary displaying:
+              </p>
+              <ul style="list-style:disc; padding-left:22px; color:var(--color-text-secondary); margin:8px 0; font-size:0.95rem;">
+                <li><strong>Signer Common Name (CN):</strong> Legal identity or entity that signed the file.</li>
+                <li><strong>Signing Timestamp:</strong> Exact date, time, and timezone when the signature was sealed.</li>
+                <li><strong>Document Integrity:</strong> Confirms whether the content was modified after signing.</li>
+                <li><strong>Certificate Authority (CA) Chain:</strong> Root CA, Intermediate CA, and issuing details.</li>
+                <li><strong>Validity Period:</strong> Certificate start and expiry dates.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="step-item">
+            <div class="step-badge">4</div>
+            <div class="step-body">
+              <h3>View the Green Tick &amp; Export Verification Report</h3>
+              <p>
+                If the signature is intact and valid, the certified <strong>Green Tick</strong> confirmation is displayed. You can also export or share a detailed cryptographic audit report for legal, corporate, or archival records.
+              </p>
+              <div class="step-tip">✅ Verification complete: Validated according to international digital signature standards.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Key Features Grid ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>⚡</span> Core Features &amp; Capabilities</h2>
+        <p class="section-lead">Engineered with rigorous mathematical standards and lightweight native speed.</p>
+
+        <div class="app-features-grid">
+          <div class="app-feature-card">
+            <div class="f-icon">🔐</div>
+            <h3>CMS / PKCS#7 Engine</h3>
+            <p>Full support for industry-standard Cryptographic Message Syntax (CMS), PKCS#7, and CAdES digital signature formats.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">📜</div>
+            <h3>X.509 Certificate Hierarchy</h3>
+            <p>Traverses complete certificate chains from End-Entity through Intermediate Certifying Authorities to Trusted Root CAs.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🛡️</div>
+            <h3>Document Hash Integrity</h3>
+            <p>Computes SHA-256 and SHA-1 checksums over precise ByteRanges to detect unauthorized post-signature alterations.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">📴</div>
+            <h3>100% Offline Capability</h3>
+            <p>Functions flawlessly in airplane mode with zero dependency on external servers or internet connectivity.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">🇮🇳</div>
+            <h3>e-Aadhaar &amp; CCA Support</h3>
+            <p>Pre-configured to recognize signatures issued by India's Controller of Certifying Authorities (CCA), e-Mudhra, NSDL, and CDAC.</p>
+          </div>
+
+          <div class="app-feature-card">
+            <div class="f-icon">⚡</div>
+            <h3>Ultra-Lightweight Footprint</h3>
+            <p>Minimal application size, zero bloat, instant startup time, and zero background battery consumption.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Technical Specifications ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>⚙️</span> Technical Specifications</h2>
+        <p class="section-lead">Key architectural and system details for users and system administrators.</p>
+
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <tbody>
+              <tr>
+                <td class="spec-title">Package Identifier</td>
+                <td class="spec-desc"><code>com.pdfsignverify.pdf_sign_verify</code></td>
+              </tr>
+              <tr>
+                <td class="spec-title">Minimum Android Version</td>
+                <td class="spec-desc">Android 6.0 (Marshmallow, API 23) or higher</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Target Android Version</td>
+                <td class="spec-desc">Android 14 (API 34) &amp; Android 15 ready</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Supported Specifications</td>
+                <td class="spec-desc">ISO 32000-1 / ISO 32000-2, RFC 5652 (CMS), RFC 2315 (PKCS#7)</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Cryptographic Algorithms</td>
+                <td class="spec-desc">RSA (1024, 2048, 4096-bit), ECDSA, SHA-256, SHA-384, SHA-512, SHA-1</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Permissions Required</td>
+                <td class="spec-desc">Read Storage / File Picker (only to access selected PDF document)</td>
+              </tr>
+              <tr>
+                <td class="spec-title">Cloud Infrastructure</td>
+                <td class="spec-desc">None — Strictly On-Device Local Sandbox</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ Frequently Asked Questions ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>❓</span> Frequently Asked Questions (FAQ)</h2>
+        <p class="section-lead">Answers to common questions regarding PDF digital signature verification on Android.</p>
+
+        <div class="faq-list">
+          <div class="faq-box">
+            <h3><span>Q:</span> Does PDF Sign Verify upload my Aadhaar card or PDFs to the internet?</h3>
+            <p>
+              <strong>No, absolutely not.</strong> PDF Sign Verify is architected from the ground up as a purely local on-device utility. The document never leaves your phone's memory. All cryptographic hash calculations and certificate validation take place directly on your phone's CPU.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Why do Adobe Reader or mobile viewers show a yellow question mark?</h3>
+            <p>
+              Most standard mobile PDF viewers do not include local cryptographic certificate trust stores or lack automated verification engines for regional Certifying Authorities (such as India's CCA). Because the viewer hasn't verified the certificate chain, it shows an unverified warning. PDF Sign Verify inspects the actual cryptographic signature data to establish true document authenticity.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> Can I verify password-protected PDF files?</h3>
+            <p>
+              Yes. If your document (such as an e-Aadhaar or bank statement) is encrypted with a password, the app will securely prompt you to unlock it on your device so the cryptographic signature stream can be extracted and verified.
+            </p>
+          </div>
+
+          <div class="faq-box">
+            <h3><span>Q:</span> What is the difference between a scanned image signature and a digital signature?</h3>
+            <p>
+              A scanned signature is merely an image pasted on top of a page and can be easily forged or copied. A true <strong>digital signature</strong> is mathematical cryptography: it seals the document with a private cryptographic key and creates a tamper-evident ByteRange hash. Any modification after signing breaks the signature mathematically.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Download CTA Banner ============ -->
+      <section class="app-content-section fade-in text-center" style="background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg-alt) 100%);">
+        <h2 style="justify-content:center;">Ready to Verify Your Digital Signatures?</h2>
+        <p class="section-lead" style="max-width:600px; margin:0 auto 24px;">
+          Download PDF Sign Verify - Green Tick for free on Google Play and start authenticating your documents with complete privacy.
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.pdfsignverify.pdf_sign_verify" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+          <span>Get it on Google Play</span>
+        </a>
+      </section>
+
+      <!-- ============ Explore Other Apps ============ -->
+      <section class="app-content-section fade-in">
+        <h2><span>📱</span> Explore Other Apps by Kirtania</h2>
+        <p class="section-lead">Discover more high-performance utilities and simulators crafted with care.</p>
+
+        <div class="related-apps-grid">
+          <a href="trade-test.html" class="related-app-item">
+            <img src="assets/trade-test-logo.jpg" alt="Trade Test Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Trade Test</span>
+              <span class="rel-cat">📈 Stock Paper Trading</span>
+            </div>
+          </a>
+
+          <a href="crypto-test.html" class="related-app-item">
+            <img src="assets/crypto-test-logo.png" alt="Crypto Test Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Crypto Test</span>
+              <span class="rel-cat">🪙 Crypto Paper Trading</span>
+            </div>
+          </a>
+
+          <a href="pito-notes.html" class="related-app-item">
+            <img src="assets/pito-notes-logo.png" alt="Pito Notes Logo" width="42" height="42" />
+            <div class="rel-info">
+              <span class="rel-title">Pito Notes</span>
+              <span class="rel-cat">📝 Productivity &amp; Notes</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps">Apps</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer">Google Play Profile</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top floating button -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
