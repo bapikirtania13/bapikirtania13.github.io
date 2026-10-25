@@ -1,6 +1,6 @@
 # Kirtania — Developer Website & Portfolio
 
-Official website of **Kirtania** (Parent Company: **Pito Store**), an independent Android application developer.
+Official website of **Kirtania** (Parent Company: **Pito Store™**), an independent Android application developer.
 
 🔗 **Live Site:** [https://bapikirtania13.github.io/](https://bapikirtania13.github.io/)
 
