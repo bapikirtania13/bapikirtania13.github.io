@@ -1,0 +1,5 @@
+# Scratch & temporary files
+Untitled-2.txt
+*.tmp
+.DS_Store
+Thumbs.db

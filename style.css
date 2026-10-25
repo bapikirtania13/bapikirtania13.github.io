@@ -1132,6 +1132,20 @@ ul {
   gap: 6px;
 }
 
+.footer-parent-tag {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: 3px;
+  letter-spacing: 0.02em;
+}
+
+.footer-parent-tag strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* ---------- Back To Top ---------- */
 .back-to-top {
   position: fixed;
