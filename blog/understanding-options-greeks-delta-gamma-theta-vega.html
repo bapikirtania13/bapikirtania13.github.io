@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>Understanding Option Greeks: Delta, Gamma, Theta &amp; Vega Explained | Kirtania</title>
+  <meta name="description" content="A beginner-friendly guide explaining option Greeks: Delta, Gamma, Theta, and Vega. Learn how time decay and implied volatility impact option pricing." />
+  <meta name="keywords" content="option Greeks explained, Delta option, Gamma option, Theta time decay, Vega implied volatility, option trading guide, Trade Test, Nifty option chain" />
+  <link rel="canonical" href="https://bapikirtania13.github.io/blog/understanding-options-greeks-delta-gamma-theta-vega.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Understanding Option Greeks: Delta, Gamma, Theta &amp; Vega Explained | Kirtania" />
+  <meta property="og:description" content="Learn how the four key Greeks dictate option contract pricing and how to test options strategies in paper trading." />
+  <meta property="og:url" content="https://bapikirtania13.github.io/blog/understanding-options-greeks-delta-gamma-theta-vega.html" />
+  <meta property="og:image" content="https://bapikirtania13.github.io/assets/banner.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="../assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Understanding Option Greeks: Delta, Gamma, Theta, and Vega Explained Simply",
+    "description": "An educational guide breaking down option Greeks (Delta, Gamma, Theta, Vega) with clear mathematical analogies and risk mitigation tips.",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://bapikirtania13.github.io/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pito Store",
+      "url": "https://bapikirtania13.github.io/"
+    },
+    "datePublished": "2026-11-03",
+    "dateModified": "2026-11-03",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bapikirtania13.github.io/blog/understanding-options-greeks-delta-gamma-theta-vega.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="../index.html" class="logo" aria-label="Kirtania Home">
+          <div class="logo-icon-wrapper">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html" class="active">Articles</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../blog.html">Articles</a>
+        <span class="separator">/</span>
+        <span class="current">Understanding Option Greeks</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="article-header fade-in">
+        <span class="blog-category-tag">📈 Derivatives &amp; Options</span>
+        <h1>Understanding Option Greeks: Delta, Gamma, Theta, and Vega Explained Simply</h1>
+        <div class="article-meta-row">
+          <span class="article-meta-item">✍️ <strong>Kirtania</strong></span>
+          <span class="article-meta-item">📅 Published: November 3, 2026</span>
+          <span class="article-meta-item">⏱️ 8 min read</span>
+          <span class="article-meta-item">🏷️ Financial Derivatives</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-container fade-in">
+        <article class="article-body">
+
+          <p class="section-lead">
+            When buying a share of standard equity stock, pricing is straightforward: if the stock moves up by \$2, you gain \$2. But options contracts do not behave like shares. Beginners are often shocked when the underlying stock moves in their predicted direction, yet their option call contract loses value.
+          </p>
+
+          <p>
+            The reason lies in the mathematical variables governing derivative pricing: the <strong>Option Greeks</strong>. Calculated via options pricing algorithms such as the Black-Scholes model, Greeks quantify how an option premium changes based on underlying asset price, passage of time, and implied market volatility.
+          </p>
+
+          <!-- Table of Contents -->
+          <div class="article-toc">
+            <h4>📑 Table of Contents</h4>
+            <ol>
+              <li><a href="#delta">Delta: The Directional Sensitivity Engine</a></li>
+              <li><a href="#gamma">Gamma: The Rate of Acceleration</a></li>
+              <li><a href="#theta">Theta: The Silent Time Decay Clock</a></li>
+              <li><a href="#vega">Vega: Implied Volatility and IV Crush</a></li>
+              <li><a href="#summary-table">Option Greeks Quick Reference Matrix</a></li>
+              <li><a href="#how-to-practice">How to Practice Option Greek Analysis Risk-Free</a></li>
+            </ol>
+          </div>
+
+          <h2 id="delta">1. Delta (&Delta;): The Directional Sensitivity Engine</h2>
+          <p>
+            <strong>Delta</strong> measures how much an option's premium is expected to change for every \$1 move in the underlying asset's price.
+          </p>
+          <ul>
+            <li><strong>Call Options:</strong> Delta ranges between <code>0.00</code> and <code>+1.00</code>. A Call option with a Delta of <code>0.50</code> will gain \$0.50 if the underlying stock rises by \$1.00.</li>
+            <li><strong>Put Options:</strong> Delta ranges between <code>-1.00</code> and <code>0.00</code>. A Put with a Delta of <code>-0.40</code> will gain \$0.40 if the stock falls by \$1.00.</li>
+          </ul>
+          <p>
+            Delta can also be viewed informally as the approximate probability that the contract will expire In-The-Money (ITM). An Out-Of-The-Money (OTM) call with a Delta of 0.15 has roughly a 15% probability of expiring ITM.
+          </p>
+
+          <h2 id="gamma">2. Gamma (&Gamma;): The Rate of Acceleration</h2>
+          <p>
+            If Delta represents velocity, <strong>Gamma</strong> is the acceleration. Gamma measures how much the option's <em>Delta</em> will change for every \$1 move in the underlying stock.
+          </p>
+          <p>
+            For example, if your Call option has a Delta of <code>0.50</code> and a Gamma of <code>0.08</code>:
+          </p>
+          <ul>
+            <li>When the stock moves up by \$1, the new Delta becomes <code>0.58</code>.</li>
+            <li>If the stock rises another \$1, the premium will now expand at this higher rate.</li>
+          </ul>
+          <p>
+            Gamma is highest for At-The-Money (ATM) options approaching their expiration date. This creates extreme sensitivity known in options trading as the "hero-or-zero gamma move."
+          </p>
+
+          <h2 id="theta">3. Theta (&Theta;): The Silent Time Decay Clock</h2>
+          <p>
+            Options have an expiration date, which makes them decaying assets. <strong>Theta</strong> represents the amount of value (premium) lost simply by the passage of one calendar day, assuming all other variables remain constant.
+          </p>
+          <div class="callout callout-warning">
+            <div class="callout-icon">⏳</div>
+            <div class="callout-text">
+              <h4>Why Option Buyers Lose: The Theta Decay Curve</h4>
+              <p>
+                Theta is negative for option buyers and positive for option sellers. Importantly, Theta decay is not linear: it accelerates exponentially during the final 30 to 45 days prior to expiration. If the underlying asset moves sideways, the option buyer loses capital every single day.
+              </p>
+            </div>
+          </div>
+
+          <h2 id="vega">4. Vega (&nu;): Implied Volatility and IV Crush</h2>
+          <p>
+            <strong>Vega</strong> measures an option's sensitivity to changes in the implied volatility (IV) of the underlying asset. Specifically, it dictates how much the contract premium changes for every 1% change in implied volatility.
+          </p>
+          <p>
+            When market uncertainty rises—such as right before a major corporate earnings announcement or union budget—investors rush to buy protection. This pumps up IV, inflating options premiums across all strike prices. Once the news is announced, uncertainty vanishes, triggering an immediate collapse in IV known as <strong>IV Crush</strong>. An option holder can be 100% correct about the direction of the earnings move, yet still lose money because Vega deflation overwhelmed the Delta gain!
+          </p>
+
+          <h2 id="summary-table">5. Option Greeks Quick Reference Matrix</h2>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Greek</th>
+                <th>Measures Sensitivity To...</th>
+                <th>Call Options</th>
+                <th>Put Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Delta (&Delta;)</strong></td>
+                <td>Underlying Asset Price Move (\$1)</td>
+                <td>Positive (0 to +1)</td>
+                <td>Negative (-1 to 0)</td>
+              </tr>
+              <tr>
+                <td><strong>Gamma (&Gamma;)</strong></td>
+                <td>Change in Delta</td>
+                <td>Positive</td>
+                <td>Positive</td>
+              </tr>
+              <tr>
+                <td><strong>Theta (&Theta;)</strong></td>
+                <td>Passage of 1 Day (Time Decay)</td>
+                <td>Negative for Buyers</td>
+                <td>Negative for Buyers</td>
+              </tr>
+              <tr>
+                <td><strong>Vega (&nu;)</strong></td>
+                <td>1% Change in Implied Volatility</td>
+                <td>Positive for Buyers</td>
+                <td>Positive for Buyers</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="how-to-practice">6. How to Practice Option Greek Analysis Risk-Free</h2>
+          <p>
+            Trying to master the Greeks by risking real savings in live options trading is an expensive endeavor. In our Android simulation app, <a href="../trade-test.html"><strong>Trade Test - Pro Paper Trading</strong></a>, you can inspect live interactive option chains, watch strike Delta and Open Interest shift during market hours, and place simulated Call/Put spread trades with virtual demo funds.
+          </p>
+          <p>
+            By tracking your virtual positions over weeks, you will intuitively learn how Theta decay eats away at Friday option purchases, how ITM contracts behave like shares, and how to protect capital before opening real brokerage accounts.
+          </p>
+
+          <!-- Author Box -->
+          <div class="author-box">
+            <img src="../assets/logo.png" alt="Kirtania Avatar" class="author-box-avatar" width="72" height="72" />
+            <div class="author-box-info">
+              <h4>Written by Kirtania</h4>
+              <p>
+                Independent Android Developer and creator of Trade Test, Crypto Test, and PDF Sign Verify. Committed to demystifying financial derivatives and applied mathematics.
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <div>
+            <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+            <span class="footer-parent-tag">Parent Company: <strong>Pito Store™</strong></span>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html">Articles</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="#" id="open-cookie-settings">Cookie Settings</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania • Parent Company: <strong>Pito Store™</strong>. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>How Digital Signatures Work in PDFs: The Complete Guide to PKCS#7 &amp; X.509 | Kirtania</title>
+  <meta name="description" content="A comprehensive technical guide to digital signatures in PDF documents. Learn how ISO 32000, CMS/PKCS#7 containers, X.509 certificate chains, and SHA-256 byte-range hashes secure digital files." />
+  <meta name="keywords" content="digital signatures PDF, PKCS7, CMS RFC 5652, X.509 certificates, ByteRange PDF, SHA-256 hashing, PDF Sign Verify, e-Aadhaar signature verification" />
+  <link rel="canonical" href="https://bapikirtania13.github.io/blog/how-digital-signatures-work-pkcs7-x509.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How Digital Signatures Work in PDFs: PKCS#7 &amp; X.509 Guide" />
+  <meta property="og:description" content="Understand the cryptographic mechanics that protect digitally signed PDFs against tampering." />
+  <meta property="og:url" content="https://bapikirtania13.github.io/blog/how-digital-signatures-work-pkcs7-x509.html" />
+  <meta property="og:image" content="https://bapikirtania13.github.io/assets/banner.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="../assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How Digital Signatures Work in PDFs: The Complete Guide to PKCS#7 & X.509",
+    "description": "A comprehensive technical guide to digital signatures in PDF documents according to ISO 32000 standards.",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://bapikirtania13.github.io/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pito Store",
+      "url": "https://bapikirtania13.github.io/"
+    },
+    "datePublished": "2026-11-03",
+    "dateModified": "2026-11-03",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bapikirtania13.github.io/blog/how-digital-signatures-work-pkcs7-x509.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="../index.html" class="logo" aria-label="Kirtania Home">
+          <div class="logo-icon-wrapper">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html" class="active">Articles</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../blog.html">Articles</a>
+        <span class="separator">/</span>
+        <span class="current">How Digital Signatures Work in PDFs</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="article-header fade-in">
+        <span class="blog-category-tag">🛡️ Cryptography &amp; Security</span>
+        <h1>How Digital Signatures Work in PDFs: The Complete Guide to PKCS#7 &amp; X.509</h1>
+        <div class="article-meta-row">
+          <span class="article-meta-item">✍️ <strong>Kirtania</strong></span>
+          <span class="article-meta-item">📅 Published: November 3, 2026</span>
+          <span class="article-meta-item">⏱️ 7 min read</span>
+          <span class="article-meta-item">🏷️ Technical Deep Dive</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-container fade-in">
+        <article class="article-body">
+
+          <p class="section-lead">
+            In modern government administration, banking, and enterprise contracting, paper documents with physical pen signatures have been almost entirely superseded by digitally signed PDF files. From e-Aadhaar cards and income tax returns in India to European eIDAS-compliant agreements, digital signatures ensure document authenticity and legal non-repudiation.
+          </p>
+
+          <p>
+            Yet for many software engineers and end users, the underlying mechanics remain an enigma. Why does a PDF viewer show a green checkmark on one computer, but a yellow question mark on a mobile phone? How can a mathematical formula prove that not a single word was altered after signing?
+          </p>
+
+          <!-- Table of Contents -->
+          <div class="article-toc">
+            <h4>📑 Table of Contents</h4>
+            <ol>
+              <li><a href="#electronic-vs-digital">Electronic Signatures vs. True Digital Signatures</a></li>
+              <li><a href="#pdf-byterange">The Ingenious ISO 32000 ByteRange Architecture</a></li>
+              <li><a href="#pkcs7-cms">Inside the Cryptographic Container: PKCS#7 and CMS</a></li>
+              <li><a href="#x509-hierarchy">The X.509 Certificate Chain of Trust</a></li>
+              <li><a href="#tamper-detection">How Document Tampering Is Detected Mathematically</a></li>
+              <li><a href="#mobile-challenges">Why Mobile Devices Struggle with Signature Validation</a></li>
+            </ol>
+          </div>
+
+          <h2 id="electronic-vs-digital">1. Electronic Signatures vs. True Digital Signatures</h2>
+          <p>
+            Before exploring PDF internals, it is essential to distinguish between a simple <strong>electronic signature</strong> and a <strong>cryptographic digital signature</strong>:
+          </p>
+          <ul>
+            <li><strong>Electronic Signature (E-Sign):</strong> Merely an image of a handwritten signature, a typed name, or an audio confirmation affixed to a document. It contains zero cryptographic integrity checks. Anyone who copies the image can paste it onto a fraudulent contract.</li>
+            <li><strong>Digital Signature:</strong> An implementation of asymmetric public-key cryptography. It binds an identity verified by a trusted Certifying Authority (CA) to the exact byte sequence of the document. If even a single punctuation mark is edited post-signing, the cryptographic seal shatters.</li>
+          </ul>
+
+          <h2 id="pdf-byterange">2. The Ingenious ISO 32000 ByteRange Architecture</h2>
+          <p>
+            When signing a file normally, you compute a hash over the whole file and encrypt it with your private key. But in a PDF, the signature itself must be stored <em>inside</em> the PDF file. This introduces an apparent chicken-and-egg paradox: how can you calculate the cryptographic checksum of a file that contains the checksum inside itself?
+          </p>
+          <p>
+            The official PDF specification (ISO 32000) resolves this through a mechanism known as the <strong><code>/ByteRange</code></strong> array inside the PDF signature dictionary:
+          </p>
+
+          <pre><code>/ByteRange [ 0, 84000, 96000, 24000 ]</code></pre>
+
+          <p>
+            This array defines two distinct slices of the file:
+          </p>
+          <ol>
+            <li><strong>Slice 1:</strong> Starts at byte offset <code>0</code> and covers the first <code>84,000</code> bytes (the document contents before the signature container).</li>
+            <li><strong>The Gap:</strong> Bytes <code>84,001</code> to <code>95,999</code> are excluded from the hash calculation. This 12,000-byte space contains the hexadecimal-encoded PKCS#7 digital signature data itself!</li>
+            <li><strong>Slice 2:</strong> Starts at byte offset <code>96,000</code> and covers the remaining <code>24,000</code> bytes to the end of the file.</li>
+          </ol>
+          <p>
+            By computing the cryptographic digest (typically SHA-256) strictly across the bytes defined in the ByteRange, the PDF reader can verify the exact document content without including the signature bytes in the equation.
+          </p>
+
+          <h2 id="pkcs7-cms">3. Inside the Cryptographic Container: PKCS#7 and CMS</h2>
+          <p>
+            The signature bytes embedded inside the PDF are formatted according to the <strong>Cryptographic Message Syntax (CMS, RFC 5652)</strong> or its predecessor, <strong>PKCS#7 (RFC 2315)</strong>. A standard <code>SignedData</code> structure contains:
+          </p>
+          <ul>
+            <li><strong>Digest Algorithm Identifier:</strong> Declares which hashing algorithm was used (e.g., SHA-256 or SHA-512).</li>
+            <li><strong>Encapsulated Content Info:</strong> Contains optional signed attributes such as the signing timestamp, signing policy, and signing reason.</li>
+            <li><strong>Signer Certificate:</strong> The X.509 public key certificate of the entity that signed the file.</li>
+            <li><strong>Encrypted Digest:</strong> The mathematical hash of the document bytes, encrypted using the signer's private RSA or ECDSA key.</li>
+          </ul>
+
+          <h2 id="x509-hierarchy">4. The X.509 Certificate Chain of Trust</h2>
+          <p>
+            Having a valid cryptographic signature only proves that the document has not been altered; it does not automatically prove <em>who</em> signed it. To prove identity, digital signatures rely on an <strong>X.509 Public Key Infrastructure (PKI)</strong> hierarchy:
+          </p>
+          <ol>
+            <li><strong>End-Entity Certificate:</strong> Belongs to the specific signer (e.g., "Unique Identification Authority of India" or an individual's digital signature token). It contains their name, public key, and issuing details.</li>
+            <li><strong>Intermediate CA Certificate:</strong> Issued by a licensed Certifying Authority (such as e-Mudhra, NSDL, or Verisign) that vouchsafes the identity of the signer.</li>
+            <li><strong>Root CA Certificate:</strong> The supreme trust anchor (such as India's Controller of Certifying Authorities - CCA India). This root certificate is self-signed and trusted by operating systems or software trust stores.</li>
+          </ol>
+          <blockquote>
+            "Trust is established like a chain: the document is trusted because the signer signed it; the signer is trusted because the Intermediate CA verified them; the Intermediate CA is trusted because the Root CA authorized them."
+          </blockquote>
+
+          <h2 id="tamper-detection">5. How Document Tampering Is Detected Mathematically</h2>
+          <p>
+            When a compliant verification application—such as our <a href="../pdf-sign-verify.html"><strong>PDF Sign Verify - Green Tick</strong></a> application for Android—validates a signature, it performs three distinct verification phases:
+          </p>
+          <ol>
+            <li><strong>Digest Recalculation:</strong> The verifier reads the document bytes defined in the <code>/ByteRange</code> and computes a fresh SHA-256 hash.</li>
+            <li><strong>Signature Decryption:</strong> It extracts the encrypted digest from the PKCS#7 container and decrypts it using the signer's public key extracted from the X.509 certificate.</li>
+            <li><strong>Comparison:</strong> If the freshly calculated hash matches the decrypted hash down to the exact bit, the document is 100% authentic. If a single letter was altered, the SHA-256 avalanche effect alters the hash completely, triggering a "Document Modified After Signing" tamper alert.</li>
+          </ol>
+
+          <h2 id="mobile-challenges">6. Why Mobile Devices Struggle with Signature Validation</h2>
+          <p>
+            Many smartphone users wonder why official documents that display a crisp green checkmark in Adobe Acrobat on a desktop computer show a yellow question mark <strong>(?)</strong> on an Android phone.
+          </p>
+          <p>
+            The reason is architectural: standard mobile PDF readers (including Google Drive viewer and basic mobile browsers) are simple visual renderers. They lack the cryptographic libraries required to parse PKCS#7 ASN.1 byte streams, extract certificate chains, or connect to national Root CA trust lists.
+          </p>
+          <p>
+            To solve this on mobile without uploading sensitive confidential files to third-party web servers, applications like <a href="../pdf-sign-verify.html"><strong>PDF Sign Verify</strong></a> execute all cryptographic CMS extraction, SHA-256 byte-range calculation, and X.509 chain traversing <strong>100% locally on your Android device</strong>.
+          </p>
+
+          <!-- Author Box -->
+          <div class="author-box">
+            <img src="../assets/logo.png" alt="Kirtania Avatar" class="author-box-avatar" width="72" height="72" />
+            <div class="author-box-info">
+              <h4>Written by Kirtania</h4>
+              <p>
+                Independent Android Developer and creator of PDF Sign Verify, Trade Test, and Pito Notes. Specializing in applied cryptography, native mobile performance, and on-device privacy architecture.
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <div>
+            <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+            <span class="footer-parent-tag">Parent Company: <strong>Pito Store™</strong></span>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html">Articles</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="#" id="open-cookie-settings">Cookie Settings</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania • Parent Company: <strong>Pito Store™</strong>. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="../script.js"></script>
+</body>
+</html>

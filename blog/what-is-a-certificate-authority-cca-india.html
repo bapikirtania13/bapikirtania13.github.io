@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>What is a Certifying Authority? Understanding CCA India &amp; PKI | Kirtania</title>
+  <meta name="description" content="A comprehensive guide to Certifying Authorities in India under the IT Act 2000. Understand the Controller of Certifying Authorities (CCA), licensed CAs like e-Mudhra and NSDL, and X.509 digital certificates." />
+  <meta name="keywords" content="Certifying Authority India, CCA India, IT Act 2000 digital signature, e-Mudhra, NSDL DSC, Class 3 digital signature, Root CA India, PDF Sign Verify" />
+  <link rel="canonical" href="https://bapikirtania13.github.io/blog/what-is-a-certificate-authority-cca-india.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is a Certifying Authority? CCA India &amp; PKI Explained | Kirtania" />
+  <meta property="og:description" content="Learn how India's Controller of Certifying Authorities (CCA) authenticates electronic signatures and identity." />
+  <meta property="og:url" content="https://bapikirtania13.github.io/blog/what-is-a-certificate-authority-cca-india.html" />
+  <meta property="og:image" content="https://bapikirtania13.github.io/assets/banner.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="../assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What is a Certifying Authority? Understanding CCA India and Trusted Certificates",
+    "description": "An educational guide detailing the legal and cryptographic framework of Certifying Authorities under India's IT Act 2000.",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://bapikirtania13.github.io/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pito Store",
+      "url": "https://bapikirtania13.github.io/"
+    },
+    "datePublished": "2026-11-03",
+    "dateModified": "2026-11-03",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bapikirtania13.github.io/blog/what-is-a-certificate-authority-cca-india.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="../index.html" class="logo" aria-label="Kirtania Home">
+          <div class="logo-icon-wrapper">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html" class="active">Articles</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../blog.html">Articles</a>
+        <span class="separator">/</span>
+        <span class="current">What is a Certifying Authority?</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="article-header fade-in">
+        <span class="blog-category-tag">🛡️ PKI &amp; Digital Identity</span>
+        <h1>What is a Certifying Authority? Understanding CCA India and Trusted Certificates</h1>
+        <div class="article-meta-row">
+          <span class="article-meta-item">✍️ <strong>Kirtania</strong></span>
+          <span class="article-meta-item">📅 Published: November 3, 2026</span>
+          <span class="article-meta-item">⏱️ 6 min read</span>
+          <span class="article-meta-item">🏷️ Legal &amp; Cryptographic Framework</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-container fade-in">
+        <article class="article-body">
+
+          <p class="section-lead">
+            When you receive an official digitally signed document in India—such as an e-Aadhaar card from UIDAI, a digitally signed income tax assessment, a corporate e-filing on the MCA21 portal, or a PAN card confirmation—you may notice names like <em>"CCA India"</em>, <em>"e-Mudhra"</em>, or <em>"NSDL"</em> in the certificate properties.
+          </p>
+
+          <p>
+            What role do these organizations play in verifying identity? In this guide, we break down the legal and technical foundation of <strong>Certifying Authorities (CAs)</strong> and the <strong>Controller of Certifying Authorities (CCA)</strong> under the Information Technology Act, 2000.
+          </p>
+
+          <!-- Table of Contents -->
+          <div class="article-toc">
+            <h4>📑 Table of Contents</h4>
+            <ol>
+              <li><a href="#the-pki-trust-problem">The Trust Problem in Digital Signatures</a></li>
+              <li><a href="#what-is-a-ca">What is a Certifying Authority?</a></li>
+              <li><a href="#cca-india-role">The Role of the Controller of Certifying Authorities (CCA)</a></li>
+              <li><a href="#licensed-cas">Major Licensed Certifying Authorities in India</a></li>
+              <li><a href="#chain-of-trust">How the Certificate Hierarchy Works</a></li>
+              <li><a href="#on-device-validation">Validating Indian CA Certificates on Mobile Devices</a></li>
+            </ol>
+          </div>
+
+          <h2 id="the-pki-trust-problem">1. The Trust Problem in Digital Signatures</h2>
+          <p>
+            Public-key cryptography allows anyone to generate a pair of keys: a private key used to sign data, and a public key used by anyone to verify the signature. However, this system has an inherent flaw: anyone can generate a key pair and attach the name "UIDAI" or "Government of India" to it.
+          </p>
+          <p>
+            To prevent impersonation, we need a legally recognized, heavily audited third party to verify an individual or organization's physical identity before issuing a cryptographic certificate that binds that identity to their public key. This trusted third party is a <strong>Certifying Authority</strong>.
+          </p>
+
+          <h2 id="what-is-a-ca">2. What is a Certifying Authority?</h2>
+          <p>
+            A Certifying Authority (CA) is an organization licensed to issue <strong>Digital Signature Certificates (DSC)</strong>. A Digital Signature Certificate acts as a cryptographic passport: it contains the holder's legal name, organization, public key, certificate expiration date, and the cryptographic digital signature of the issuing CA.
+          </p>
+          <p>
+            Under Section 24 of India's Information Technology Act, 2000, no entity may issue digital signature certificates for statutory use without a license issued by the Central Government.
+          </p>
+
+          <h2 id="cca-india-role">3. The Role of the Controller of Certifying Authorities (CCA)</h2>
+          <p>
+            The <strong>Controller of Certifying Authorities (CCA)</strong> is the apex regulatory body established under the Ministry of Electronics and Information Technology (MeitY) by the Government of India.
+          </p>
+          <div class="callout callout-shield">
+            <div class="callout-icon">🇮🇳</div>
+            <div class="callout-text">
+              <h4>The Supreme National Trust Anchor: India PKI Root CA</h4>
+              <p>
+                The CCA operates the <strong>India PKI Root Certifying Authority (India PKI)</strong>. The CCA's self-signed root certificate sits at the top of the entire national trust hierarchy. The CCA digitally signs the certificates of licensed intermediate CAs, legally binding all certified signatures to the Government of India.
+              </p>
+            </div>
+          </div>
+
+          <h2 id="licensed-cas">4. Major Licensed Certifying Authorities in India</h2>
+          <p>
+            The CCA licenses a selective group of government and commercial organizations to issue digital certificates to citizens, businesses, and government departments:
+          </p>
+          <ul>
+            <li><strong>e-Mudhra:</strong> One of the largest commercial providers of Class 3 DSCs and eSign services across India.</li>
+            <li><strong>NSDL (Protean eGov Technologies):</strong> Powers tax returns, PAN services, and government administrative e-filings.</li>
+            <li><strong>C-DAC (Centre for Development of Advanced Computing):</strong> The premier R&amp;D organization under MeitY providing eSign services.</li>
+            <li><strong>IDRBT (Institute for Development and Research in Banking Technology):</strong> Established by the Reserve Bank of India (RBI) to issue certificates for national inter-bank payment systems like NEFT and RTGS.</li>
+            <li><strong>NIC (National Informatics Centre):</strong> Issues digital certificates exclusively to government officials and ministries.</li>
+          </ul>
+
+          <h2 id="chain-of-trust">5. How the Certificate Hierarchy Works</h2>
+          <p>
+            When an e-Aadhaar is downloaded, its cryptographic validation follows a strict three-tier chain:
+          </p>
+          <pre><code>[Root Anchor]      India PKI Root CA (Managed by CCA India)
+                          │  (Digitally signs Intermediate CA)
+[Intermediate CA]  e-Mudhra Sub-CA / NIC Sub-CA
+                          │  (Digitally signs UIDAI certificate)
+[End-Entity]       Unique Identification Authority of India (UIDAI)
+                          │  (Digitally signs your e-Aadhaar PDF)
+[Your Document]    e-Aadhaar PDF ByteRange Hash</code></pre>
+          <p>
+            If any link in this chain is expired, revoked, or untrusted, the verification fails.
+          </p>
+
+          <h2 id="on-device-validation">6. Validating Indian CA Certificates on Mobile Devices</h2>
+          <p>
+            Because foreign operating systems like standard Android and Windows do not always include national government root certificates in their default pre-installed trust stores, official Indian PDFs often appear as "unverified" on standard mobile viewers.
+          </p>
+          <p>
+            Our native Android tool, <a href="../pdf-sign-verify.html"><strong>PDF Sign Verify - Green Tick</strong></a>, is pre-configured with the official CCA India root certificate hierarchy. When you open any official Indian PDF, it automatically traces the certificate chain from UIDAI or NSDL up to CCA India, confirming full compliance with Section 5 of the Information Technology Act, 2000 <strong>completely offline and privately</strong>.
+          </p>
+
+          <!-- Author Box -->
+          <div class="author-box">
+            <img src="../assets/logo.png" alt="Kirtania Avatar" class="author-box-avatar" width="72" height="72" />
+            <div class="author-box-info">
+              <h4>Written by Kirtania</h4>
+              <p>
+                Independent Android Developer and creator of PDF Sign Verify, Trade Test, and Pito Notes. Specializing in PKI compliance, cryptographic verification algorithms, and privacy-first utilities.
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <div>
+            <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+            <span class="footer-parent-tag">Parent Company: <strong>Pito Store™</strong></span>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html">Articles</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="#" id="open-cookie-settings">Cookie Settings</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania • Parent Company: <strong>Pito Store™</strong>. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>How to Verify Digital Signatures on e-Aadhaar &amp; PAN Cards on Android | Kirtania</title>
+  <meta name="description" content="Step-by-step tutorial on how to validate digital signatures on e-Aadhaar and PAN card PDF files on Android mobile devices with 100% on-device privacy." />
+  <meta name="keywords" content="verify e-Aadhaar signature Android, validate PAN card signature mobile, yellow question mark Aadhaar PDF, green tick digital signature, PDF Sign Verify, UIDAI signature" />
+  <link rel="canonical" href="https://bapikirtania13.github.io/blog/how-to-verify-eaadhaar-pan-digital-signature.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Verify e-Aadhaar &amp; PAN Digital Signatures on Android" />
+  <meta property="og:description" content="Fix the yellow question mark on e-Aadhaar and PAN cards on mobile safely with zero file uploads." />
+  <meta property="og:url" content="https://bapikirtania13.github.io/blog/how-to-verify-eaadhaar-pan-digital-signature.html" />
+  <meta property="og:image" content="https://bapikirtania13.github.io/assets/banner.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="../assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Verify Digital Signatures on e-Aadhaar and PAN Cards on Android",
+    "description": "Step-by-step practical guide on how to validate official digital signatures on e-Aadhaar and PAN cards on Android devices.",
+    "author": {
+      "@type": "Person",
+      "name": "Kirtania",
+      "url": "https://bapikirtania13.github.io/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pito Store",
+      "url": "https://bapikirtania13.github.io/"
+    },
+    "datePublished": "2026-11-03",
+    "dateModified": "2026-11-03",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://bapikirtania13.github.io/blog/how-to-verify-eaadhaar-pan-digital-signature.html"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="../index.html" class="logo" aria-label="Kirtania Home">
+          <div class="logo-icon-wrapper">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html" class="active">Articles</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../blog.html">Articles</a>
+        <span class="separator">/</span>
+        <span class="current">Verify Digital Signatures on e-Aadhaar &amp; PAN</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="article-header fade-in">
+        <span class="blog-category-tag">📱 Mobile Security &amp; How-To</span>
+        <h1>How to Verify Digital Signatures on e-Aadhaar and PAN Cards on Android</h1>
+        <div class="article-meta-row">
+          <span class="article-meta-item">✍️ <strong>Kirtania</strong></span>
+          <span class="article-meta-item">📅 Published: November 3, 2026</span>
+          <span class="article-meta-item">⏱️ 6 min read</span>
+          <span class="article-meta-item">🏷️ Practical Tutorial</span>
+        </div>
+      </header>
+
+      <!-- Article Content -->
+      <div class="article-container fade-in">
+        <article class="article-body">
+
+          <p class="section-lead">
+            When you download an official electronic document from UIDAI (e-Aadhaar) or the Income Tax Department (e-PAN), you will notice a signature box at the bottom. On desktop computers running specialized software, this displays an authentic green tick mark. But when you open that same PDF on your Android smartphone, it almost invariably displays an unverified yellow question mark <strong>(?)</strong> with the warning: <em>"Validity Unknown"</em> or <em>"Signature Not Verified"</em>.
+          </p>
+
+          <p>
+            Many government offices, passport centers, bank KYC verifiers, and universities reject printouts or electronic submissions that still show the question mark. In this step-by-step guide, you will learn why this occurs and how to verify digital signatures directly on Android with complete data privacy.
+          </p>
+
+          <!-- Table of Contents -->
+          <div class="article-toc">
+            <h4>📑 Table of Contents</h4>
+            <ol>
+              <li><a href="#why-question-mark">Why Does the Yellow Question Mark Appear?</a></li>
+              <li><a href="#security-risks">The Severe Privacy Risks of Online Signature Converters</a></li>
+              <li><a href="#on-device-solution">The Safe Alternative: On-Device Cryptographic Verification</a></li>
+              <li><a href="#step-by-step-guide">Step-by-Step Guide to Verifying Signatures on Android</a></li>
+              <li><a href="#understanding-report">Understanding the Cryptographic Audit Certificate</a></li>
+              <li><a href="#frequently-asked-questions">Common Troubleshooting &amp; FAQs</a></li>
+            </ol>
+          </div>
+
+          <h2 id="why-question-mark">1. Why Does the Yellow Question Mark Appear?</h2>
+          <p>
+            The yellow question mark does <strong>not</strong> mean your e-Aadhaar or PAN card is fake or expired. It simply means your phone's current PDF viewer is unable to cryptographically validate the signature.
+          </p>
+          <p>
+            When an authority like UIDAI generates an e-Aadhaar, it signs the document using a cryptographic certificate issued by India's Controller of Certifying Authorities (CCA). To verify this signature, software must:
+          </p>
+          <ul>
+            <li>Extract the PKCS#7 digital signature container from the PDF structure.</li>
+            <li>Inspect the signer's public key certificate.</li>
+            <li>Traverse the certificate hierarchy to confirm that the certificate was signed by a recognized root authority (e.g., CCA India, e-Mudhra, NSDL, or CDAC).</li>
+            <li>Recalculate the SHA-256 byte-range digest across the document to prove no bytes were modified.</li>
+          </ul>
+          <p>
+            Standard Android PDF viewers (such as Google Drive Viewer, WhatsApp built-in viewers, or default gallery tools) simply do not contain this cryptographic PKI validation engine. Thus, they display a question mark by default.
+          </p>
+
+          <h2 id="security-risks">2. The Severe Privacy Risks of Online Signature Converters</h2>
+          <p>
+            Many users turn to online web tools promising to "convert your yellow question mark to a green tick online". This is an <strong>extremely dangerous practice</strong>.
+          </p>
+          <div class="callout callout-warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-text">
+              <h4>Warning: Never Upload Identity Documents to Cloud Portals</h4>
+              <p>
+                Your e-Aadhaar and PAN card contain sensitive personal identification data: your full name, date of birth, residential address, biometric reference IDs, and facial photograph. Uploading this file to unknown third-party cloud servers risks identity theft, financial fraud, and unauthorized data brokers harvesting your personal information.
+              </p>
+            </div>
+          </div>
+
+          <h2 id="on-device-solution">3. The Safe Alternative: On-Device Cryptographic Verification</h2>
+          <p>
+            The only secure way to validate signatures on mobile is through an application that performs all cryptographic validation <strong>locally on your phone's processor</strong> without internet connectivity.
+          </p>
+          <p>
+            Our dedicated utility, <a href="../pdf-sign-verify.html"><strong>PDF Sign Verify - Green Tick</strong></a>, was engineered specifically to solve this problem. It runs 100% offline in airplane mode. Your document never leaves your phone's storage.
+          </p>
+
+          <h2 id="step-by-step-guide">4. Step-by-Step Guide to Verifying Signatures on Android</h2>
+          <p>Follow these quick steps to validate your digitally signed document:</p>
+
+          <h3>Step 1: Download PDF Sign Verify</h3>
+          <p>
+            Install <a href="https://play.google.com/store/apps/details?id=com.pdfsignverify.pdf_sign_verify" target="_blank" rel="noopener noreferrer"><strong>PDF Sign Verify - Green Tick</strong></a> from Google Play. It requires zero sensitive permissions (no camera, contacts, or location).
+          </p>
+
+          <h3>Step 2: Select Your PDF File</h3>
+          <p>
+            Open the app and tap <strong>"Select PDF"</strong>. Use Android's system document picker to select your e-Aadhaar, e-PAN, tax receipt, university mark sheet, or digitally signed invoice.
+          </p>
+          <blockquote>
+            <strong>Tip for password-protected Aadhaar PDFs:</strong> If your e-Aadhaar requires a password (usually the first 4 letters of your name in CAPITALS followed by your birth year, e.g., <code>KIRT1998</code>), the app will prompt you to enter the password locally to unlock the byte stream.
+          </blockquote>
+
+          <h3>Step 3: Instant Cryptographic Inspection</h3>
+          <p>
+            Within milliseconds, the app parses the ISO 32000 ByteRange, recalculates the SHA-256 digest, and validates the X.509 certificate chain against trusted certifying authority roots.
+          </p>
+
+          <h3>Step 4: Inspect Signer Details and Green Tick</h3>
+          <p>
+            The application displays the authenticated <strong>Green Tick</strong> along with complete cryptographic audit details:
+          </p>
+          <ul>
+            <li><strong>Signer Identity:</strong> e.g., <em>"Unique Identification Authority of India"</em> or <em>"National Securities Depository Limited"</em>.</li>
+            <li><strong>Signing Timestamp:</strong> The exact date, time, and timezone when the signature was sealed.</li>
+            <li><strong>Document Integrity:</strong> Confirms: <em>"Document has not been modified since signature was applied."</em></li>
+            <li><strong>Certificate Validity:</strong> Date of issuance and expiry.</li>
+          </ul>
+
+          <h2 id="understanding-report">5. Understanding the Cryptographic Audit Certificate</h2>
+          <p>
+            Once verified, the app allows you to view and export an official Verification Report. This report summarizes the cryptographic proof:
+          </p>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Verification Field</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Common Name (CN)</strong></td>
+                <td>The legal entity or individual that applied the private key signature.</td>
+              </tr>
+              <tr>
+                <td><strong>Certifying Authority (CA)</strong></td>
+                <td>The licensed body (e.g. CCA, e-Mudhra) that confirmed the signer's identity.</td>
+              </tr>
+              <tr>
+                <td><strong>Digest Algorithm</strong></td>
+                <td>The mathematical hash used (typically SHA-256 with RSA encryption).</td>
+              </tr>
+              <tr>
+                <td><strong>ByteRange Integrity</strong></td>
+                <td>Confirms that zero bytes were changed after the signature was affixed.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="frequently-asked-questions">6. Common Troubleshooting &amp; FAQs</h2>
+
+          <h3>Q: What if the signature is invalid or forged?</h3>
+          <p>
+            If someone opened the PDF and edited any number or letter in your Aadhaar card or PAN card, the SHA-256 byte-range digest will not match the decrypted hash. The app will immediately alert you: <strong>"Document modified after signing — Signature Invalid!"</strong>.
+          </p>
+
+          <h3>Q: Does the app need internet access to verify files?</h3>
+          <p>
+            <strong>No.</strong> PDF Sign Verify is pre-packaged with trusted Root CA certificates and performs all cryptographic calculations on your phone's CPU. You can verify documents while completely disconnected from Wi-Fi or mobile data.
+          </p>
+
+          <!-- Author Box -->
+          <div class="author-box">
+            <img src="../assets/logo.png" alt="Kirtania Avatar" class="author-box-avatar" width="72" height="72" />
+            <div class="author-box-info">
+              <h4>Written by Kirtania</h4>
+              <p>
+                Independent Android Developer and creator of PDF Sign Verify, Trade Test, and Pito Notes. Committed to building secure, on-device mobile utilities that preserve user privacy.
+              </p>
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="../assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <div>
+            <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+            <span class="footer-parent-tag">Parent Company: <strong>Pito Store™</strong></span>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html#home">Home</a>
+          <a href="../index.html#apps">Apps</a>
+          <a href="../blog.html">Articles</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms of Service</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="#" id="open-cookie-settings">Cookie Settings</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania • Parent Company: <strong>Pito Store™</strong>. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="../script.js"></script>
+</body>
+</html>

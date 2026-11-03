@@ -218,4 +218,128 @@
   } else {
     fadeEls.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  /* ---------- Cookie Consent Management & Google Consent Mode v2 ---------- */
+  function updateGoogleConsent(granted) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
+        'ad_personalization': granted ? 'granted' : 'denied',
+        'analytics_storage': granted ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  function initCookieConsent() {
+    let savedConsent = null;
+    try {
+      savedConsent = localStorage.getItem('cookie_consent');
+    } catch (e) {}
+
+    if (savedConsent === 'accepted') {
+      updateGoogleConsent(true);
+      return;
+    } else if (savedConsent === 'essential') {
+      updateGoogleConsent(false);
+      return;
+    }
+
+    // Create banner dynamically if not present
+    let banner = document.getElementById('cookie-consent-banner');
+    if (!banner) {
+      banner = document.createElement('div');
+      banner.id = 'cookie-consent-banner';
+      banner.className = 'cookie-banner';
+      banner.setAttribute('role', 'region');
+      banner.setAttribute('aria-label', 'Cookie Consent Notice');
+      banner.innerHTML = `
+        <div class="cookie-content">
+          <div class="cookie-header">
+            <span aria-hidden="true">🍪</span>
+            <h4>Cookie &amp; Privacy Preferences</h4>
+          </div>
+          <p>
+            We use cookies to analyze site traffic, personalize content, and display relevant Google AdSense advertisements. By clicking "Accept All", you consent to our use of cookies in accordance with our <a href="privacy.html">Privacy Policy</a>.
+          </p>
+        </div>
+        <div class="cookie-actions">
+          <button type="button" class="btn-cookie-reject" id="cookie-reject-btn">Essential Only</button>
+          <button type="button" class="btn-cookie-accept" id="cookie-accept-btn">Accept All</button>
+        </div>
+      `;
+      document.body.appendChild(banner);
+    }
+
+    setTimeout(function () {
+      banner.classList.add('visible');
+    }, 600);
+
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    const rejectBtn = document.getElementById('cookie-reject-btn');
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function () {
+        try {
+          localStorage.setItem('cookie_consent', 'accepted');
+        } catch (e) {}
+        updateGoogleConsent(true);
+        banner.classList.remove('visible');
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function () {
+        try {
+          localStorage.setItem('cookie_consent', 'essential');
+        } catch (e) {}
+        updateGoogleConsent(false);
+        banner.classList.remove('visible');
+      });
+    }
+  }
+
+  // Allow resetting preferences via footer link
+  document.addEventListener('click', function (e) {
+    if (e.target && (e.target.matches('#open-cookie-settings') || e.target.closest('#open-cookie-settings') || e.target.matches('.open-cookie-settings'))) {
+      e.preventDefault();
+      try {
+        localStorage.removeItem('cookie_consent');
+      } catch (err) {}
+      const existing = document.getElementById('cookie-consent-banner');
+      if (existing) {
+        existing.classList.add('visible');
+      } else {
+        initCookieConsent();
+      }
+    }
+  });
+
+  initCookieConsent();
+
+  /* ---------- Contact Form Handler ---------- */
+  const contactForm = document.getElementById('site-contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name')?.value || '';
+      const email = document.getElementById('contact-email')?.value || '';
+      const subject = document.getElementById('contact-subject')?.value || 'Website Inquiry';
+      const message = document.getElementById('contact-message')?.value || '';
+      const feedback = document.getElementById('contact-form-feedback');
+
+      if (!name || !email || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      if (feedback) {
+        feedback.className = 'form-feedback success';
+        feedback.innerHTML = `<strong>Thank you, ${name}!</strong> Opening your email client to send to business.kirtania@gmail.com...`;
+      }
+
+      const mailtoUri = `mailto:business.kirtania@gmail.com?subject=${encodeURIComponent('[Kirtania Web] ' + subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\nMessage:\n' + message)}`;
+      window.location.href = mailtoUri;
+    });
+  }
 })();

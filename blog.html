@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) {
+          document.documentElement.setAttribute('data-theme', saved);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1284309397637088"
+       crossorigin="anonymous"></script>
+
+  <title>Articles &amp; Tech Guides | Kirtania Knowledge Hub</title>
+  <meta name="description" content="In-depth technical guides, tutorials, and insights on cryptographic PDF digital signature validation, stock and crypto paper trading, and privacy-first mobile architecture." />
+  <meta name="keywords" content="Kirtania Blog, digital signatures guide, PKCS7 tutorial, paper trading guide, stock market simulation, crypto trading strategies, mobile privacy, Android security" />
+  <link rel="canonical" href="https://bapikirtania13.github.io/blog.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Articles &amp; Tech Guides | Kirtania Knowledge Hub" />
+  <meta property="og:description" content="Comprehensive guides on digital signatures, stock/crypto market simulation, and privacy-first software." />
+  <meta property="og:url" content="https://bapikirtania13.github.io/blog.html" />
+  <meta property="og:image" content="https://bapikirtania13.github.io/assets/banner.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Articles &amp; Guides | Kirtania" />
+  <meta name="twitter:description" content="Comprehensive guides on digital signatures, financial simulation, and mobile privacy." />
+  <meta name="twitter:image" content="https://bapikirtania13.github.io/assets/banner.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ Header ============ -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-nav-row">
+        <a href="index.html" class="logo" aria-label="Kirtania Home">
+          <div class="logo-icon-wrapper">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="40" height="40" />
+          </div>
+          <span>Kirtania<span class="dot">.</span></span>
+        </a>
+
+        <nav class="nav" id="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps">Apps</a>
+          <a href="blog.html" class="active">Articles</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">🌙</button>
+          <a href="https://play.google.com/store/apps/dev?id=7172278988293432799" target="_blank" rel="noopener noreferrer" class="btn btn-play btn-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.38 2.38 0 0 1-.61-.913V2.727c.174-.356.39-.672.61-.913zm11.235 11.238l2.585-2.586L4.85 3.398l10 9.654zm0 .896l-10 9.654 12.579-7.068-2.58-2.586zm1.758-1.757l3.666 2.062c1.282.721 1.282 1.897 0 2.618l-3.666 2.062-2.316-2.316 2.316-2.316z"/></svg>
+            <span>Google Play</span>
+          </a>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-scroll-progress" id="header-scroll-progress" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="separator">/</span>
+        <span class="current">Articles &amp; Guides</span>
+      </nav>
+
+      <!-- Blog Hero -->
+      <section class="blog-hero fade-in">
+        <div class="section-tag" style="margin-bottom:10px;">Knowledge Base</div>
+        <h1 style="font-family:var(--font-heading); font-size:clamp(2.1rem, 4vw, 3rem); font-weight:900; margin-bottom:14px;">
+          Guides, Tutorials &amp; Technical Insights
+        </h1>
+        <p style="font-size:1.1rem; color:var(--color-text-secondary); max-width:700px; margin:0 auto; line-height:1.6;">
+          Explore comprehensive educational resources on cryptographic digital signatures, stock and options paper trading mechanics, and privacy-first Android software architecture.
+        </p>
+      </section>
+
+      <!-- Articles Grid -->
+      <section class="blog-grid fade-in">
+
+        <!-- Article 1: How PKCS#7 Works -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">🛡️ Cryptography</span>
+            <span class="blog-read-time">7 min read</span>
+          </div>
+          <h3>How Digital Signatures Work in PDFs: The Complete Guide to PKCS#7 &amp; X.509</h3>
+          <p>
+            Learn the mathematics and structure of digital signatures in PDF files according to ISO 32000. Understand ByteRanges, hashing algorithms, and public-key cryptography.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/how-digital-signatures-work-pkcs7-x509.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 2: Verify e-Aadhaar & PAN -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">📱 Mobile Security</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h3>How to Verify Digital Signatures on e-Aadhaar and PAN Cards on Android</h3>
+          <p>
+            Why do mobile PDF readers display a yellow question mark instead of a green checkmark? Discover how on-device signature validation works and how to verify official identity files.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/how-to-verify-eaadhaar-pan-digital-signature.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 3: Paper Trading Guide -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">📈 Trading</span>
+            <span class="blog-read-time">9 min read</span>
+          </div>
+          <h3>The Ultimate Beginner's Guide to Stock Paper Trading: Master Markets Risk-Free</h3>
+          <p>
+            Why 90% of beginner traders lose capital and how disciplined paper trading helps you test technical setups, build order execution habits, and cultivate psychological discipline.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/paper-trading-guide-for-beginners.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 4: Option Greeks -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">📈 Derivatives</span>
+            <span class="blog-read-time">8 min read</span>
+          </div>
+          <h3>Understanding Option Greeks: Delta, Gamma, Theta, and Vega Explained Simply</h3>
+          <p>
+            Demystify options pricing variables. Understand how time decay erodes premium value, how delta measures price sensitivity, and how to practice Greek analysis in virtual sandboxes.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/understanding-options-greeks-delta-gamma-theta-vega.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 5: Crypto Paper Trading Strategies -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">🪙 Cryptocurrency</span>
+            <span class="blog-read-time">8 min read</span>
+          </div>
+          <h3>Top 5 Cryptocurrency Paper Trading Strategies to Test Before Trading Live</h3>
+          <p>
+            Navigate 24/7 crypto market volatility without risking real money. Test Dollar-Cost Averaging, support/resistance breakouts, and swing-trading setups risk-free.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/crypto-paper-trading-strategies.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 6: On-Device Privacy Architecture -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">🔒 Architecture</span>
+            <span class="blog-read-time">7 min read</span>
+          </div>
+          <h3>Why On-Device Processing Matters: The Architecture of Offline-First Mobile Apps</h3>
+          <p>
+            An engineering perspective on why user files, personal notes, and cryptographic keys should never touch third-party cloud servers. Local SQLite and sandbox principles explained.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/offline-privacy-in-mobile-apps.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 7: Risk Management Rules -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">📈 Risk Management</span>
+            <span class="blog-read-time">8 min read</span>
+          </div>
+          <h3>10 Essential Risk Management Rules Every Beginner Trader Must Follow</h3>
+          <p>
+            The mathematical principles of capital preservation: position sizing, the 1% risk rule, risk-to-reward asymmetry, and avoiding emotional overtrading.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/risk-management-rules-for-retail-traders.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+        <!-- Article 8: What is a Certificate Authority -->
+        <article class="blog-card">
+          <div class="blog-badge-wrap">
+            <span class="blog-category-tag">🛡️ PKI &amp; Security</span>
+            <span class="blog-read-time">6 min read</span>
+          </div>
+          <h3>What is a Certifying Authority? Understanding CCA India and Trusted Certificates</h3>
+          <p>
+            Explore Public Key Infrastructure (PKI) hierarchies. Learn how India's Controller of Certifying Authorities (CCA), e-Mudhra, and NSDL authenticate identity in digital workflows.
+          </p>
+          <div class="blog-card-footer">
+            <span>By Kirtania • Nov 2026</span>
+            <a href="blog/what-is-a-certificate-authority-cca-india.html" class="blog-card-read-more">Read Guide →</a>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-icon-wrapper" style="width:36px; height:36px;">
+            <img src="assets/logo.png" alt="Kirtania Brand Logo" width="36" height="36" />
+          </div>
+          <div>
+            <span style="font-family:var(--font-heading); font-weight:800; font-size:1.2rem;">Kirtania<span style="color:var(--color-primary)">.</span></span>
+            <span class="footer-parent-tag">Parent Company: <strong>Pito Store™</strong></span>
+          </div>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#apps">Apps</a>
+          <a href="blog.html">Articles</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="#" id="open-cookie-settings">Cookie Settings</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Kirtania • Parent Company: <strong>Pito Store™</strong>. All rights reserved.</p>
+        <div class="footer-badge">
+          <span>🛡️ Verified Android Developer</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
